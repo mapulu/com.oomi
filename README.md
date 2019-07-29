@@ -7,4 +7,4 @@ More devices will be added later. Please send me a message if you want a specifi
 
 ### Changelog:
 **1.0.0**
-Fist initial version
+First initial version
