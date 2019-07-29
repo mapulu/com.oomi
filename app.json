@@ -25,16 +25,23 @@
   },
   "author": {
     "name": "Martin P",
-    "email": "martin@pussamsies.de"
+    "email": "mapulu@t-online.de"
   },
   "contributors": {
     "developers": [
       {
         "name": "Martin P",
-        "email": "martin@pussamsies.de"
+        "email": "mapulu@t-online.de"
       }
     ]
   },
+   "contributing": {
+        "donate": {
+            "paypal": {
+                "username": "mapulu"
+            }
+        }
+},
   "drivers": [
     {
       "id": "FT096-C16",
