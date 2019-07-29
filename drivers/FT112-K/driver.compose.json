@@ -1,0 +1,38 @@
+{
+  "id": "FT112-K",
+  "name": {
+    "en": "Door/Window Sensor 6",
+	"de": "Tür-/Fenster Sensor"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_battery",
+    "alarm_contact"
+  ],
+  "images": {
+    "large": "{{driverAssetsPath}}/images/large.png",
+    "small": "{{driverAssetsPath}}/images/small.png"
+  },
+  "zwave": {
+    "manufacturerId": 362,
+    "productTypeId": [
+      7426
+    ],
+    "productId": [
+      100
+    ],
+    "zwaveAllianceProductId": 2653,
+    "zwaveAllianceProductDocumentation": "https://products.z-wavealliance.org/ProductManual/File?folder=&filename=Manuals/2653/Oomi%20Door%20Window%20Sensor%20manual.pdf",
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/learnmode.svg",
+      "instruction": {
+        "en": "Short press the action button on the back of the {{driverNameEn}}.",
+        "nl": "Druk kort op de actie knop op de achterkant van de {{driverNameNl}}.",
+		"de": "Drücke kurz die Taste des Tür-/Fenster Sensors"
+      }
+    },
+    "associationGroups": [
+      1
+    ]
+  }
+}

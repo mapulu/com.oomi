@@ -1,0 +1,1581 @@
+{
+  "id": "com.oomi",
+  "name": {
+    "en": "Oomi",
+	"de": "Oomi"
+  },
+  "version": "1.0.0",
+  "compatibility": ">=2.4.0",
+  "sdk": 2,
+  "brandColor": "#ff781a",
+  "category": [
+    "appliances",
+    "lights",
+    "security",
+    "climate"
+  ],
+  "description": {
+    "en": "Oomi devices for Homey",
+    "nl": "Oomi ondersteuning voor Homey",
+    "de": "Oomi Geräte für Homey"
+  },
+  "images": {
+    "large": "/assets/images/large.png",
+    "small": "/assets/images/small.png"
+  },
+  "author": {
+    "name": "Martin P",
+    "email": "martin@pussamsies.de"
+  },
+  "contributors": {
+    "developers": [
+      {
+        "name": "Martin P",
+        "email": "martin@pussamsies.de"
+      }
+    ]
+  },
+  "drivers": [
+    {
+      "id": "FT096-C16",
+      "name": {
+        "en": "Plug"
+      },
+      "class": "socket",
+      "capabilities": [
+        "measure_power",
+        "meter_power",
+        "onoff"
+      ],
+      "images": {
+        "large": "/drivers/FT096-C16/assets/images/large.png",
+        "small": "/drivers/FT096-C16/assets/images/small.png"
+      },
+      "zwave": {
+        "manufacturerId": 362,
+        "productTypeId": [
+          3
+        ],
+        "productId": [
+          96
+        ],
+        "zwaveAllianceProductId": 2375,
+        "zwaveAllianceProductDocumentation": "https://products.z-wavealliance.org/ProductManual/File?folder=&filename=Manuals/2375/Instructions%20-%20Oomi%20Plug.pdf",
+        "learnmode": {
+          "instruction": {
+            "en": "Press the (action) button on the Smart Switch to enter learn mode",
+            "nl": "Druk op de (actie) knop op de Smart Switch om de leer modus te activeren"
+          }
+        },
+        "associationGroups": [
+          1
+        ],
+        "associationGroupsOptions": {
+          "1": {
+            "hint": {
+              "en": "Z-Wave Plus Lifeline.\r\nThe Hail CC and Basic Report CC (configured by parameter 80) can be sent to the associatd nodes in this group.",
+              "de": "Z-Wave Plus Lifeline. Die Hail CC und die Basic Report CC (konfiguriert durch Parameter 80) können an die zugeordneten Node dieser Gruppe gesendet werden."
+            }
+          }
+        },
+        "defaultConfiguration": [
+          {
+            "id": 3,
+            "size": 1,
+            "value": 1
+          },
+          {
+            "id": 80,
+            "size": 1,
+            "value": 2
+          },
+          {
+            "id": 90,
+            "size": 1,
+            "value": 1
+          },
+          {
+            "id": 91,
+            "size": 2,
+            "value": 25
+          },
+          {
+            "id": 92,
+            "size": 1,
+            "value": 30
+          },
+          {
+            "id": 101,
+            "size": 4,
+            "value": 12
+          },
+          {
+            "id": 111,
+            "size": 4,
+            "value": 15
+          }
+        ]
+      },
+      "settings": [
+        {
+          "id": "3",
+          "type": "checkbox",
+          "label": {
+            "en": "Current overload protection",
+            "nl": "Bescherming tegen overbelasting",
+            "de": "Stromüberlastschutz"
+          },
+          "hint": {
+            "en": "This parameter (3) determines whether or not the Plug protects plugged-in devices from overcurrent.",
+            "nl": "Deze parameter (3) bepaalt of de Plug de ingeplugde appraten beschermd tegen overbelasting.",
+            "de": "Dieser Parameter (3) bestimmt, ob der Plug die angeschlossenen Geräte vor Überstrom schützt oder nicht."
+          },
+          "zwave": {
+            "index": 3,
+            "size": 1
+          },
+          "value": true
+        },
+        {
+          "id": "20",
+          "type": "dropdown",
+          "label": {
+            "en": "Configure the output load status after re-power",
+            "nl": "Zet na een stroomonderbreking deze Smart Switch",
+            "de": "Konfigurieren des schaltstatus nach dem Einschalten der Stromversorgung"
+          },
+          "hint": {
+            "en": "This parameter (20) determines the device behaviour after power loss.",
+            "nl": "Deze parameter (20) bepaalt het gedrag van het appraat na stroomuitval.",
+            "de": "Dieser Parameter (20) bestimmt das Geräteverhalten nach einem Stromausfall."
+          },
+          "zwave": {
+            "index": 20,
+            "size": 1
+          },
+          "value": "0",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Status before re-power",
+                "nl": "Status voor stroomonderbreking",
+                "de": "Status vor dem Stromausfall"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Always on",
+                "nl": "Altijd aan",
+                "de": "Immer einschalten"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "Always off",
+                "nl": "Altijd uit",
+                "de": "Immer ausschalten"
+              }
+            }
+          ]
+        },
+        {
+          "id": "80",
+          "type": "checkbox",
+          "label": {
+            "en": "Benachrichtung assozierte Geräte, wenn der Plug umgeschaltet wurde",
+            "nl": "Stuur notificaties naar geassocieerde apparaten wanneer de Plug aan of uit wordt gezet"
+          },
+          "hint": {
+            "en": "This parameter (80) determines whether or not associated devices are notifiied of on/off events.",
+            "nl": "Deze parameter (80) bepaalt of geassocieerde apparaten notificaties ontvangen van aan/uit events.",
+            "de": "Dieser Parameter (80)  bestimmt, ob assozierten Geräte über Ein-/Aus-Ereignisse benachrichtigt werden oder nicht."
+          },
+          "zwave": {
+            "index": 80,
+            "size": 1
+          },
+          "value": true
+        },
+        {
+          "id": "81",
+          "type": "dropdown",
+          "label": {
+            "en": "Configure the behaviour of the LED",
+            "nl": "Stel het gedrag van de LED in",
+            "de": "LED verhalten"
+          },
+          "hint": {
+            "en": "This parameter (81) determines the behaviour of the device LED.",
+            "nl": "Deze parameter (81) bepaalt het gedrag van de apparaat LED.",
+            "de": "Dieser Parameter (81) bestimmt das Verhalten der Geräte-LED."
+          },
+          "zwave": {
+            "index": 81,
+            "size": 1
+          },
+          "value": "0",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "LED color follows load",
+                "nl": "LED kleur representeert stroom verbruik",
+                "de": "LED-Farbe folgt der Belastung"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "LED color follows load for 5 seconds",
+                "nl": "LED kleur representeert stroom verbruik voor 5 seconden",
+                "de": "LED-Farbe folgt der Belastung für 5 Sekunden"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "Night light mode",
+                "nl": "Nacht lamp modus",
+                "de": "Nachtlicht Modus"
+              }
+            }
+          ]
+        },
+        {
+          "id": "91",
+          "type": "number",
+          "label": {
+            "en": "Minimum wattage change needed before an update report is send",
+            "nl": "Minimale verandering in wattage nodig voor het verzenden van een update",
+            "de": "Minimale Wattänderung erforderlich, bevor ein neuer Report gesendet wird."
+          },
+          "hint": {
+            "en": "This parameter (91) determines the minimum change of wattage before value reports are sent to Homey.",
+            "nl": "Deze parameter (91) bepaalt de minimale verandering in wattage voordat er rapporten worden verstuurd naar Homey.",
+            "de": "Dieser Parameter (91) bestimmt die minimale Änderung der Wattleistung, bevor Werteberichte an Homey gesendet werden."
+          },
+          "zwave": {
+            "index": 91,
+            "size": 2,
+            "signed": false
+          },
+          "attr": {
+            "min": 0,
+            "max": 60000
+          },
+          "value": 25
+        },
+        {
+          "id": "92",
+          "type": "number",
+          "label": {
+            "en": "Minimum wattage change (%) needed before an update report is send",
+            "nl": "Minimale verandering in wattage (%) nodig voor het verzenden van een update",
+            "de": "Minimale Wattänderung (%) erforderlich, bevor ein neuer Report gesendet wird."
+          },
+          "hint": {
+            "en": "This parameter (92) determines the minimum percentage change in wattage before value reports are sent to Homey.",
+            "nl": "Deze parameter (92) bepaalt de minimale verandering in procenten van het wattage voordat er rapporten worden verstuurd naar Homey.",
+            "de": "Dieser Parameter  (92) bestimmt die minimale prozentuale Änderung der Wattleistung, bevor value reports an Homey gesendet werden."
+          },
+          "zwave": {
+            "index": 92,
+            "size": 1
+          },
+          "attr": {
+            "min": 0,
+            "max": 100
+          },
+          "value": 30
+        },
+        {
+          "id": "101",
+          "type": "dropdown",
+          "label": {
+            "en": "Information reports send to association group 1",
+            "nl": "Informatie updates naar associatie groep 1",
+            "de": "Information reports an die Assoziationsgruppe 1 senden"
+          },
+          "hint": {
+            "en": "This parameter (101) determines what information is sent to the devices in association group 1.",
+            "nl": "Deze parameter (101) bepaalt welke informatie er wordt verstuurd naar de apparaten in de 1e associatie groep.",
+            "de": "Dieser Parameter (101) bestimmt, welche Informationen an die Geräte der Zuordnungsgruppe 1 gesendet werden."
+          },
+          "zwave": {
+            "index": 101,
+            "size": 4
+          },
+          "value": "8",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Nothing",
+                "nl": "Geen",
+                "de": "Keine"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Voltage (V)",
+                "nl": "Voltage (V)",
+                "de": "Spannung (V)"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "Current (A)",
+                "nl": "Stromstärke (A)"
+              }
+            },
+            {
+              "id": "4",
+              "label": {
+                "en": "Power (Watt)",
+                "nl": "Vermogen (Watt)",
+                "de": "Leistung (Watt)"
+              }
+            },
+            {
+              "id": "8",
+              "label": {
+                "en": "Energy (kWh)",
+                "nl": "Energie (kWh)",
+                "de": "Energie (kWh)"
+              }
+            },
+            {
+              "id": "12",
+              "label": {
+                "en": "Power (Watt) & Energy (kWh)",
+                "nl": "Vermogen (Watt) & Energie (kWh)",
+                "de": "Leistung (Watt) & Energie (kWh)"
+              }
+            },
+            {
+              "id": "15",
+              "label": {
+                "en": "Everything",
+                "nl": "Alles",
+                "de": "Alles"
+              }
+            }
+          ]
+        },
+        {
+          "id": "102",
+          "type": "dropdown",
+          "label": {
+            "en": "Information reports send to association group 2",
+            "nl": "Informatie updates naar associatie groep 2",
+            "de": "Information reports an die Assoziationsgruppe 2 senden"
+          },
+          "hint": {
+            "en": "This parameter (102) determines what information is sent to the devices in association group 2.",
+            "nl": "Deze parameter (102) bepaalt welke informatie er wordt verstuurd naar de apparaten in de 2e associatie groep.",
+            "de": "Dieser Parameter (102) bestimmt, welche Informationen an die Geräte der Zuordnungsgruppe 2 gesendet werden."
+          },
+          "zwave": {
+            "index": 102,
+            "size": 4
+          },
+          "value": "8",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Nothing",
+                "nl": "Geen",
+                "de": "Keine"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Voltage (V)",
+                "nl": "Voltage (V)",
+                "de": "Spannung (V)"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "Current (A)",
+                "nl": "Stromstärke (A)"
+              }
+            },
+            {
+              "id": "4",
+              "label": {
+                "en": "Power (Watt)",
+                "nl": "Vermogen (Watt)",
+                "de": "Leistung (Watt)"
+              }
+            },
+            {
+              "id": "8",
+              "label": {
+                "en": "Energy (kWh)",
+                "nl": "Energie (kWh)",
+                "de": "Energie (kWh)"
+              }
+            },
+            {
+              "id": "12",
+              "label": {
+                "en": "Power (Watt) & Energy (kWh)",
+                "nl": "Vermogen (Watt) & Energie (kWh)",
+                "de": "Leistung (Watt) & Energie (kWh)"
+              }
+            },
+            {
+              "id": "15",
+              "label": {
+                "en": "Everything",
+                "nl": "Alles",
+                "de": "Alles"
+              }
+            }
+          ]
+        },
+        {
+          "id": "103",
+          "type": "dropdown",
+          "label": {
+            "en": "Information reports send to association group 3",
+            "nl": "Informatie updates naar associatie groep 3",
+            "de": "Information reports an die Assoziationsgruppe 3 senden"
+          },
+          "hint": {
+            "en": "This parameter (103) determines what information is sent to the devices in association group 3.",
+            "nl": "Deze parameter (103) bepaalt welke informatie er wordt verstuurd naar de apparaten in de 3e associatie groep.",
+            "de": "Dieser Parameter (103) bestimmt, welche Informationen an die Geräte der Zuordnungsgruppe 1 gesendet werden."
+          },
+          "zwave": {
+            "index": 103,
+            "size": 4
+          },
+          "value": "8",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Nothing",
+                "nl": "Geen",
+                "de": "Keine"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Voltage (V)",
+                "nl": "Voltage (V)",
+                "de": "Spannung (V)"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "Current (A)",
+                "nl": "Stromstärke (A)"
+              }
+            },
+            {
+              "id": "4",
+              "label": {
+                "en": "Power (Watt)",
+                "nl": "Vermogen (Watt)",
+                "de": "Leistung (Watt)"
+              }
+            },
+            {
+              "id": "8",
+              "label": {
+                "en": "Energy (kWh)",
+                "nl": "Energie (kWh)",
+                "de": "Energie (kWh)"
+              }
+            },
+            {
+              "id": "12",
+              "label": {
+                "en": "Power (Watt) & Energy (kWh)",
+                "nl": "Vermogen (Watt) & Energie (kWh)",
+                "de": "Leistung (Watt) & Energie (kWh)"
+              }
+            },
+            {
+              "id": "15",
+              "label": {
+                "en": "Everything",
+                "nl": "Alles",
+                "de": "Alles"
+              }
+            }
+          ]
+        },
+        {
+          "id": "111",
+          "type": "number",
+          "label": {
+            "en": "Reporting interval association group 1",
+            "nl": "Informatie update interval associatie groep 1",
+            "de": "Meldeintervall Assoziationsgruppe 1"
+          },
+          "hint": {
+            "en": "This parameter (111) determines the interval between reports to Homey.",
+            "nl": "Deze parameter (111) bepaalt de tijd tussen rapportages naar Homey.",
+            "de": "Dieser Parameter (111) bestimmt das Intervall zwischen den Berichten an Homey."
+          },
+          "zwave": {
+            "index": 111,
+            "size": 4
+          },
+          "attr": {
+            "min": 0,
+            "max": 2147483647
+          },
+          "value": 15
+        },
+        {
+          "id": "112",
+          "type": "number",
+          "label": {
+            "en": "Reporting interval association group 2",
+            "nl": "Informatie update interval associatie groep 2",
+            "de": "Meldeintervall Assoziationsgruppe 2"
+          },
+          "hint": {
+            "en": "This parameter (112) determines the interval between reports to devices in association group 2.",
+            "nl": "Deze parameter (112) bepaalt de tijd tussen rapportages naar apparaten in de 2e associatie groep.",
+            "de": "Dieser Parameter (112) bestimmt das Intervall zwischen den Berichten an Geräte der Zuordnungsgruppe 2."
+          },
+          "zwave": {
+            "index": 112,
+            "size": 4
+          },
+          "attr": {
+            "min": 0,
+            "max": 2147483647
+          },
+          "value": 600
+        },
+        {
+          "id": "113",
+          "type": "number",
+          "label": {
+            "en": "Reporting interval association group 3",
+            "nl": "Informatie update interval associatie groep 3",
+            "de": "Meldeintervall Assoziationsgruppe 3"
+          },
+          "hint": {
+            "en": "This parameter (113) determines the interval between reports to devices in association group 3.",
+            "nl": "Deze parameter (113) bepaalt de tijd tussen rapportages naar apparaten in de 3e associatie groep.",
+            "de": "Dieser Parameter (113) bestimmt das Intervall zwischen den Berichten an Geräte der Zuordnungsgruppe 3."
+          },
+          "zwave": {
+            "index": 113,
+            "size": 4
+          },
+          "attr": {
+            "min": 0,
+            "max": 2147483647
+          },
+          "value": 600
+        }
+      ]
+    },
+    {
+      "id": "FT100-K",
+      "name": {
+        "en": "Multisensor 6",
+        "de": "Multisensor 6-in-1"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "measure_battery",
+        "alarm_motion",
+        "alarm_tamper",
+        "measure_temperature",
+        "measure_luminance",
+        "measure_humidity",
+        "measure_ultraviolet"
+      ],
+      "images": {
+        "large": "/drivers/FT100-K/assets/images/large.png",
+        "small": "/drivers/FT100-K/assets/images/small.png"
+      },
+      "zwave": {
+        "manufacturerId": 362,
+        "productTypeId": [
+          7426,
+          258
+        ],
+        "productId": 100,
+        "zwaveAllianceProductId": 2592,
+        "zwaveAllianceProductDocumentation": "https://products.z-wavealliance.org/ProductManual/File?folder=&filename=Manuals/2592/Oomi%20MultiSensor%20manual3.pdf",
+        "learnmode": {
+          "image": "/drivers/FT100-K/assets/learnmode.svg",
+          "instruction": {
+            "en": "Drücke die Taste am Multisensor 6-in-1.",
+            "nl": "Druk op de actie knop op de Multisensor 6."
+          }
+        },
+        "associationGroups": [
+          1
+        ],
+        "associationGroupsOptions": {
+          "1": {
+            "hint": {
+              "en": "This is the lifeline, it is not recommended to remove Homey's id from this association group.",
+              "nl": "Dit is de levenslijn, het is niet aangeraden om Homey's zijn id te verwijderen uit deze associatie groep.",
+              "de": "Dies ist die lifeline, es wird nicht empfohlen, die ID von Homey aus dieser Assoziationsgruppe zu entfernen."
+            }
+          }
+        },
+        "defaultConfiguration": [
+          {
+            "id": 5,
+            "value": 2,
+            "size": 1
+          },
+          {
+            "id": 40,
+            "value": 1,
+            "size": 1
+          },
+          {
+            "id": 111,
+            "value": 600,
+            "size": 4
+          }
+        ]
+      },
+      "settings": [
+        {
+          "id": "2",
+          "type": "checkbox",
+          "label": {
+            "en": "10 Minutes Wake-Up",
+            "nl": "10 Minuten Wakker",
+            "de": "10 Minuten Wake-Up"
+          },
+          "hint": {
+            "en": "If this option is enabled, the device will stay awake for 10 minutes when the batteries are replaced",
+            "nl": "Als deze optie is ingeschakeld zal het apparaat voor 10 minuten wakker blijven wanneer de batterijen zijn vervangen",
+            "de": "Wenn diese Option aktiviert ist, bleibt das Gerät 10 Minuten lang wach, wenn die Batterien ausgetauscht wurden"
+          },
+          "zwave": {
+            "index": 2,
+            "size": 1
+          },
+          "value": false
+        },
+        {
+          "id": "3",
+          "type": "number",
+          "label": {
+            "en": "Motion Alarm Cancellation",
+            "nl": "Bewegingsalarm Annulering",
+            "de": "Annullierung des Bewegungsalarms"
+          },
+          "hint": {
+            "en": "Time before motion alarm is turned off since last motion detected event.\nRange: 10 - 255 = seconds\n256 - 3600 = minutes when devided by 60",
+            "nl": "Tijd voor dat bewegingsdetectie alarm wordt uitgeschakeld na laatste beweging.\nBereik: 10 - 255 = seconden\n256 - 3600 = minuten wanneer gedeeld door 60",
+            "de": "Zeit bis zur Abschaltung des Bewegungsalarms seit der letzten erkannten Bewegung. \nBereich: 10 - 255 = Sekunden\n256 - 3600 = Minuten, wenn durch 60 geteilt"
+          },
+          "zwave": {
+            "index": 3,
+            "size": 2
+          },
+          "attr": {
+            "min": 10,
+            "max": 3600
+          },
+          "value": 240
+        },
+        {
+          "id": "4",
+          "type": "dropdown",
+          "label": {
+            "en": "Motion Sensor Sensitivity",
+            "nl": "Gevoeligheid Bewegingssensor",
+            "de": "Empfindlichkeit des Bewegungsmelders"
+          },
+          "hint": {
+            "en": "Determines sensitivity of the motion sensor.",
+            "nl": "Bepaald de gevoeligheid van de bewegingssensor.",
+            "de": "Bestimmt die Empfindlichkeit des Bewegungsmelders."
+          },
+          "zwave": {
+            "index": 4,
+            "size": 1
+          },
+          "value": "5",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Off",
+                "nl": "Uit",
+                "de": "Aus"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Level 1 (minimum)",
+                "nl": "Level 1 (minimum)",
+                "de": "Level 1 (minimum)"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "Level 2",
+                "nl": "Level 2",
+                "de": "Level 2"
+              }
+            },
+            {
+              "id": "3",
+              "label": {
+                "en": "Level 3",
+                "nl": "Level 3",
+                "de": "Level 3"
+              }
+            },
+            {
+              "id": "4",
+              "label": {
+                "en": "Level 4",
+                "nl": "Level 4",
+                "de": "Level 4"
+              }
+            },
+            {
+              "id": "5",
+              "label": {
+                "en": "Level 5 (maximum)",
+                "nl": "Level 5 (maximum)",
+                "de": "Level 5 (maximum)"
+              }
+            }
+          ]
+        },
+        {
+          "id": "tamper_cancellation",
+          "type": "number",
+          "label": {
+            "en": "Tamper Alarm Cancellation",
+            "nl": "Sabotage Alarm Annulering",
+            "de": "Löschung des Manipulationsalarms"
+          },
+          "hint": {
+            "en": "After how many seconds will the tamper alarm be de-activated.\nRange: 0 (don't cancel), 1 - 86400 seconds",
+            "nl": "Na hoeveel seconden moet het tamper alarm worden ge-deactiveerd.\nBereik: 0 (niet annuleren), 1 - 86400 seconden",
+            "de": "Nach wie vielen Sekunden wird der Manipulationsalarm deaktiviert. \nBereich: 0 (nie löschen), 1 - 86400 Sekunden"
+          },
+          "attr": {
+            "min": 0,
+            "max": 86400
+          },
+          "value": 120
+        },
+        {
+          "id": "39",
+          "type": "number",
+          "label": {
+            "en": "Battery Low Threshold",
+            "nl": "Batterij Laag Drempel",
+            "de": "Schwellenwert für schwache Batterie"
+          },
+          "hint": {
+            "en": "Percentage of battery power below which the device should send a low battery alarm",
+            "nl": "Percentage batterij niveau waaronder het apparaat een lege batterij waarschuwing zou moeten geven",
+            "de": "Prozentsatz der Batterie, unter dem das Gerät einen Alarm bei niedrigem Batteriestand senden soll"
+          },
+          "zwave": {
+            "index": 39,
+            "size": 1
+          },
+          "attr": {
+            "min": 10,
+            "max": 50
+          },
+          "value": 20
+        },
+        {
+          "id": "40",
+          "type": "checkbox",
+          "label": {
+            "en": "Threshold Dependend Updates",
+            "nl": "Drempel Afhankelijke Updates",
+            "de": "Schwellenwert für abhängige Updates"
+          },
+          "hint": {
+            "en": "Determine if the new measured value(s) need to exceed the threshold (determined below) before it is send on the interval.",
+            "nl": "Bepaal of de nieuwe gemeten waarde(s) de drempel moeten overschrijden (hieronder bepaald) voor ze worden verzonden op het interval.",
+            "de": "Bestimme, ob der/die neue(n) Messwert(e) den Schwellenwert (siehe unten) überschreiten müssen, bevor er in dem Intervall gesendet wird."
+          },
+          "zwave": {
+            "index": 40,
+            "size": 1
+          },
+          "value": true
+        },
+        {
+          "id": "41",
+          "type": "number",
+          "label": {
+            "en": "Temperature Threshold",
+            "nl": "Temperatuur Drempel",
+            "de": "Temperaturschwellenwert"
+          },
+          "hint": {
+            "en": "If this temperature threshold (in Celsius) has been exceeded, the device will send the new value on the interval\nRange: 0 (no report), 1 - 10 degree",
+            "nl": "Als deze temperatuur drempel (in Celsius) wordt overschreden, zal het apparaat de nieuwe waarde versturen op het interval\nBereik: 0 (geen update), 1 - 10 graden",
+            "de": "Wenn dieser Temperaturschwellenwert (in Celsius) überschritten wird, sendet das Gerät den neuen Wert im Intervall\nBereich: 0 (kein Bericht), 1 - 10 Grad"
+          },
+          "zwave": {
+            "index": 41,
+            "size": 1
+          },
+          "attr": {
+            "min": 0,
+            "max": 10
+          },
+          "value": 2
+        },
+        {
+          "id": "42",
+          "type": "number",
+          "label": {
+            "en": "Humidity Threshold",
+            "nl": "Luchtvochtigheid Drempel",
+            "de": "Luftfeuchtigkeitschwellenwert"
+          },
+          "hint": {
+            "en": "If this humidity threshold (in percentage) has been exceeded, the device will send the new value on the interval\nRange: 0 (no report), 1 - 100%",
+            "nl": "Als deze luchtvochtigheid drempel (in percentage) wordt overschreden, zal het apparaat de nieuwe waarde versturen op het interval\nBereik: 0 (geen update), 1 - 100%",
+            "de": "Wenn dieser Feuchtigkeitsschwellenwert (in Prozent) überschritten wurde, sendet das Gerät den neuen Wert im Intervall\nBereich: 0 (kein Bericht), 1 - 100%"
+          },
+          "zwave": {
+            "index": 42,
+            "size": 1
+          },
+          "attr": {
+            "min": 0,
+            "max": 100
+          },
+          "value": 10
+        },
+        {
+          "id": "43",
+          "type": "number",
+          "label": {
+            "en": "Luminance Threshold",
+            "nl": "Omgevingslicht Drempel",
+            "de": "Helligkeitsschwellwert"
+          },
+          "hint": {
+            "en": "If this luminance threshold (in lux) has been exceeded, the device will send the new value on the interval\nRange: 0 (no report), 1 - 1000 lux",
+            "nl": "Als deze omgevingslicht drempel (in lux) wordt overschreden, zal het apparaat de nieuwe waarde versturen op het interval\nBereik: 0 (geen update), 1 - 1000 lux",
+            "de": "Wenn dieser Helligkeits-Schwellenwert (in Lux) überschritten wurde, sendet das Gerät den neuen Wert im Intervall\nBereich: 0 (kein Bericht), 1 - 1000 Lux"
+          },
+          "zwave": {
+            "index": 43,
+            "size": 2
+          },
+          "attr": {
+            "min": 0,
+            "max": 1000
+          },
+          "value": 100
+        },
+        {
+          "id": "44",
+          "type": "number",
+          "label": {
+            "en": "Battery Level Threshold",
+            "nl": "Batterijniveau Drempel",
+            "de": "Batterieschwellenwert"
+          },
+          "hint": {
+            "en": "If this battery level threshold (in percentage) has been exceeded, the device will send the new value on the interval\nRange: 0 (no report), 1 - 100%",
+            "nl": "Als dit batterijniveau drempel (in percentage) wordt overschreden, zal het apparaat de nieuwe waarde versturen op het interval\nBereik: 0 (geen update), 1 - 100%",
+            "de": "Wenn dieser Schwellenwert für den Batteriestand (in Prozent) überschritten wurde, sendet das Gerät den neuen Wert im Intervall\nBereich. 0 (kein Bericht), 1 - 100%"
+          },
+          "zwave": {
+            "index": 44,
+            "size": 1
+          },
+          "attr": {
+            "min": 0,
+            "max": 100
+          },
+          "value": 10
+        },
+        {
+          "id": "45",
+          "type": "number",
+          "label": {
+            "en": "Ultraviolet Threshold",
+            "nl": "Ultraviolet Drempel",
+            "de": "Ultraviolett-Schwellenwert"
+          },
+          "hint": {
+            "en": "If this ultraviolet threshold (in percentage) has been exceeded, the device will send the new value on the interval\nRange: 0 (no report), 1 - 100%",
+            "nl": "Als deze ultraviolet drempel (in percentage) wordt overschreden, zal het apparaat de nieuwe waarde versturen op het interval\nBereik: 0 (geen update), 1 - 100%",
+            "de": "Wenn dieser UV-Schwellenwert (in Prozent) überschritten wird, sendet das Gerät den neuen Wert im Intervall\nBereich: 0 (kein Bericht), 1 - 100%"
+          },
+          "zwave": {
+            "index": 45,
+            "size": 1
+          },
+          "attr": {
+            "min": 0,
+            "max": 100
+          },
+          "value": 2
+        },
+        {
+          "id": "81",
+          "type": "checkbox",
+          "label": {
+            "en": "LED Behaviour On Alarms",
+            "nl": "LED Gedrag Bij Alarmen",
+            "de": "LED Verhalten bei Alarmen"
+          },
+          "hint": {
+            "en": "Enable the LED on activating the motion and tamper alarms.\n\nDevice firmware v1.8 and up",
+            "nl": "Activeer de LED bij het activeren van de beweging en sabotage alarmen.\n\nDevice firmware v1.8 en hoger",
+            "de": "Aktivieren die LED zur Aktivierung der Bewegungs- und Manipulationsalarme."
+          },
+          "zwave": {
+            "index": 81,
+            "size": 1
+          },
+          "value": true
+        },
+        {
+          "id": "111",
+          "type": "number",
+          "label": {
+            "en": "Update Value(s) Interval",
+            "nl": "Update Waarde(s) Update Interval",
+            "de": "Aktualisierungs Intervall"
+          },
+          "hint": {
+            "en": "This parameter indicates how often the MultiSensor 6 should send an update of (new) values to devices in association group 1 (including Homey).",
+            "nl": "Deze parameter geeft aan hoe vaak de MultiSensor 6 een update van (nieuwe) waardes naar apparaten in associatie group 1 verstuurd (inclusief Homey)",
+            "de": "Dieser Parameter gibt an, wie oft der MultiSensor 6 eine Aktualisierung der (neuen) Werte an Geräte der Zuordnungsgruppe 1 (einschließlich Homey) senden soll."
+          },
+          "zwave": {
+            "index": 111,
+            "size": 4
+          },
+          "attr": {
+            "min": 5,
+            "max": 2678400
+          },
+          "value": 600
+        },
+        {
+          "id": "201",
+          "type": "number",
+          "label": {
+            "en": "Temperature Calibration",
+            "nl": "Temperatuur Kalibratie",
+            "de": "Temperatur Justierung"
+          },
+          "hint": {
+            "en": "Determine how much degree Celsius needs to be offset to get the right temperature.\nRange: -12.8 - +12.7 degree",
+            "nl": "Bepaal hoeveel graden Celsius de temperatuur gecompenseerd moet worden.\nBereik: -12,8 - +12,7 graden",
+            "de": "Bestimmt, um wie viel Grad Celsius es angepasst werden muss, um die richtige Temperatur zu erhalten."
+          },
+          "zwave": {
+            "index": 201,
+            "size": 2
+          },
+          "attr": {
+            "min": -12.8,
+            "max": 12.7,
+            "step": 0.1
+          },
+          "value": 0
+        },
+        {
+          "id": "202",
+          "type": "number",
+          "label": {
+            "en": "Humidity Calibration",
+            "nl": "Luchtvochtigheid Kalibratie",
+            "de": "Luftfeuchtigkeits Justierung"
+          },
+          "hint": {
+            "en": "Determine what percentage needs to be offset to get the right humidity.\nRange: -50% - +50%",
+            "nl": "Bepaal welke percentage er moet worden gecompenseerd om de echte waarde te krijgen.\nBereik: -50% - +50%",
+            "de": "Bestimmt, welcher Prozentsatz angepasst werden muss, um die richtige Luftfeuchtigkeit zu erhalten.\nBereich: -50% - +50%"
+          },
+          "zwave": {
+            "index": 202,
+            "size": 1
+          },
+          "attr": {
+            "min": -50,
+            "max": 50
+          },
+          "value": 0
+        },
+        {
+          "id": "203",
+          "type": "number",
+          "label": {
+            "en": "Luminance Calibration",
+            "nl": "Omgevingslicht Kalibratie",
+            "de": "Helligkeits Justierung"
+          },
+          "hint": {
+            "en": "Determine how much lux needs to be offset to get the right luminance.\nRange: -1000 - +1000 lux",
+            "nl": "Bepaal hoeveel lux er moet worden gecompenseerd om de goede waarde te krijgen.\nBereik: -1000 - +1000 lux",
+            "de": "Bestimmt, wie viel Lux angepasst werden muss, um die richtige Helligkeit zu erhalten.\nBereich: -1000 - +1000 Lux"
+          },
+          "zwave": {
+            "index": 203,
+            "size": 2
+          },
+          "attr": {
+            "min": -1000,
+            "max": 1000
+          },
+          "value": 0
+        },
+        {
+          "id": "204",
+          "type": "number",
+          "label": {
+            "en": "Ultraviolet Calibration",
+            "nl": "Ultraviolet Kalibratie",
+            "de": "Ultraviolett Justierung"
+          },
+          "hint": {
+            "en": "Determine what percentage needs to be offset to get the right ultraviolet value.\nRange: -10% - +10%",
+            "nl": "Bepaal hoeveel percentage er gecompenseerd moet worden om de goede ultraviolet waarde te krijgen.\nBereik: -10% - +10%",
+            "de": "Bestimmt, wie viel Prozent angepasst werden muss, um den richtigen Ultraviolett Wert zu erhalten.\nBereich: -1000 - +1000 Lux"
+          },
+          "zwave": {
+            "index": 204,
+            "size": 1
+          },
+          "attr": {
+            "min": -10,
+            "max": 10
+          },
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "FT112-K",
+      "name": {
+        "en": "Door/Window Sensor 6",
+        "de": "Tür-/Fenster Sensor"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "measure_battery",
+        "alarm_contact"
+      ],
+      "images": {
+        "large": "/drivers/FT112-K/assets/images/large.png",
+        "small": "/drivers/FT112-K/assets/images/small.png"
+      },
+      "zwave": {
+        "manufacturerId": 362,
+        "productTypeId": [
+          7426
+        ],
+        "productId": [
+          100
+        ],
+        "zwaveAllianceProductId": 2653,
+        "zwaveAllianceProductDocumentation": "https://products.z-wavealliance.org/ProductManual/File?folder=&filename=Manuals/2653/Oomi%20Door%20Window%20Sensor%20manual.pdf",
+        "learnmode": {
+          "image": "/drivers/FT112-K/assets/learnmode.svg",
+          "instruction": {
+            "en": "Short press the action button on the back of the Door/Window Sensor 6.",
+            "nl": "Druk kort op de actie knop op de achterkant van de Door/Window Sensor 6.",
+            "de": "Drücke kurz die Taste des Tür-/Fenster Sensors"
+          }
+        },
+        "associationGroups": [
+          1
+        ]
+      },
+      "settings": [
+        {
+          "id": "1",
+          "type": "dropdown",
+          "label": {
+            "en": "Sensor behaviour",
+            "nl": "Sensor gedrag"
+          },
+          "hint": {
+            "en": "This parameter (1) determines when the sensor triggers the contact alarm.",
+            "nl": "Deze parameter (1) bepaalt wanneer het contact alarm van de sensor afgaat.",
+            "de": "Dieser Parameter (1) bestimmt, wann der Sensor den Kontaktalarm auslöst."
+          },
+          "zwave": {
+            "index": 1,
+            "size": 1
+          },
+          "value": "0",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "No contact = on, contact = off",
+                "nl": "Geen contact = aan, contact = uit",
+                "de": "Kein Kontakt = an, Kontakt = aus"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "No contact = off, contact = on",
+                "nl": "Geen contact = uit, contact = aan",
+                "de": "Kein Kontakt = aus, Kontakt = an"
+              }
+            }
+          ]
+        },
+        {
+          "id": "101",
+          "type": "checkbox",
+          "label": {
+            "en": "Low battery warning",
+            "nl": "Lege batterij waarschuwing",
+            "de": "Niedrige Batterie Warnung"
+          },
+          "hint": {
+            "en": "This parameter (101) determines whether or not the device sends battery warnings.",
+            "nl": "Deze parameter (101) bepaalt of het apparaat batterij waarschuwingen verstuurd.",
+            "de": "Dieser Parameter (101) bestimmt ob das Gerät Batterie Warnung verschickt oder nicht"
+          },
+          "zwave": {
+            "index": 101,
+            "size": 1
+          },
+          "value": true
+        },
+        {
+          "id": "111",
+          "type": "number",
+          "label": {
+            "en": "Low battery checking interval",
+            "nl": "Laag batterij niveau check interval",
+            "de": "Niedrige Batterie Prüfungsintervall"
+          },
+          "hint": {
+            "en": "This parameter (111) determines the interval at which the battery level will be checked. First 10 values are seconds, from there on out it adjusts per 4 minutes.",
+            "nl": "Deze parameter (111) bepaalt het interval waarop de battery wordt gecontroleerd. De eerste 10 waardes zijn in seconden, daarna past deze aan per 4 minuten.",
+            "de": "Dieser Parameter (111) bestimmt das Intervall bei dem der Batteriestand geprüft wird. 1-10 ist in Sekudnen, ab dann je 4 Minuten."
+          },
+          "zwave": {
+            "index": 111,
+            "size": 4
+          },
+          "attr": {
+            "min": 0,
+            "max": 2147483647
+          },
+          "value": 86640
+        },
+        {
+          "id": 39,
+          "type": "number",
+          "label": {
+            "en": "Low battery value",
+            "nl": "Laag batterij niveau waarde"
+          },
+          "hint": {
+            "en": "This parameter (39) determines at which level the low battery alarm will go off.",
+            "nl": "Deze parameter (39) bepaalt op welk batterijniveau het lage niveau alarm afgaat.",
+            "de": "Der Parameter (39) bestimmt ab welchen Batteriestand der Batterie Alarm angeht."
+          },
+          "zwave": {
+            "index": 39,
+            "size": 1
+          },
+          "attr": {
+            "min": 10,
+            "max": 50
+          },
+          "value": 20
+        }
+      ]
+    },
+    {
+      "id": "FT121-C",
+      "name": {
+        "en": "LED Strip",
+        "de": "LED Strip"
+      },
+      "class": "light",
+      "capabilities": [
+        "light_saturation",
+        "light_temperature",
+        "dim",
+        "light_hue",
+        "light_mode",
+        "onoff"
+      ],
+      "capabilitiesOptions": {
+        "onoff": {
+          "setOnDim": false
+        },
+        "dim": {
+          "opts": {
+            "duration": true
+          }
+        }
+      },
+      "images": {
+        "large": "/drivers/FT121-C/assets/images/large.png",
+        "small": "/drivers/FT121-C/assets/images/small.png"
+      },
+      "zwave": {
+        "manufacturerId": 362,
+        "productTypeId": [
+          3
+        ],
+        "productId": [
+          121
+        ],
+        "zwaveAllianceProductId": 2362,
+        "zwaveAllianceProductDocumentation": "https://products.z-wavealliance.org/ProductManual/File?folder=&filename=Manuals/2362/Oomi%20ColorStrip%20manual%20-%202.pdf",
+        "learnmode": {
+          "image": "/drivers/FT121-C/assets/learnmode.svg",
+          "instruction": {
+            "en": "Press the action button on the LED Strip Controller.",
+            "nl": "Druk eenmaal op de actie knop op de LED Strip Controller.",
+            "de": "Drücke die Taste am Color Strip Controller."
+          }
+        },
+        "associationGroups": [
+          1,
+          2
+        ],
+        "defaultConfiguration": [
+          {
+            "id": 80,
+            "size": 1,
+            "value": 2
+          }
+        ]
+      },
+      "settings": [
+        {
+          "id": "power_off_state_recovery",
+          "type": "dropdown",
+          "label": {
+            "en": "State recovery after power loss",
+            "nl": "Status herstel na stroomuitval"
+          },
+          "hint": {
+            "en": "This parameter (20) determines the behaviour of the LED Strip after power loss.",
+            "nl": "Deze parameter (20) bepaalt het gedrag van de LED Strip na stroomuitval.",
+            "de": "Dieser Parameter (20) bestimmt das Verhalten des LED Strip nach Stromausfall."
+          },
+          "zwave": {
+            "index": 20,
+            "size": 1
+          },
+          "value": "0",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Recover last state before power loss",
+                "nl": "Herstel de laatste status voor de stroomuitval",
+                "de": "Letzter Zustand vor Stromausfall wiederherstellen"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Always turn on",
+                "nl": "Altijd aan",
+                "de": "Immer einschalten"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "Always turn off",
+                "nl": "Altijd uit",
+                "de": "Immer ausschalten"
+              }
+            }
+          ]
+        },
+        {
+          "id": "report_color_change",
+          "type": "checkbox",
+          "label": {
+            "en": "Report color change",
+            "nl": "Rapporteer kleurverandering",
+            "de": "Farbänderung melden"
+          },
+          "hint": {
+            "en": "This parameter (32) determines whether or not the LED Strip reports color changes.",
+            "nl": "Deze parameter (32) bepaalt of de LED Strip zijn kleurveranderingen rapporteerd.",
+            "de": "Dieser Parameter (32) bestimmt, ob der LED Strip Farbwechsel meldet oder nicht."
+          },
+          "zwave": {
+            "index": 32,
+            "size": 1
+          },
+          "value": false
+        },
+        {
+          "id": "color_switch_last_brightness",
+          "type": "checkbox",
+          "label": {
+            "en": "Set last brightness level on color switch",
+            "nl": "Zet het laatste helderheidsniveau op kleurverandering",
+            "de": "Letzte Helligkeitsstufe beim Farbwechsel"
+          },
+          "hint": {
+            "en": "This parameter (34) determines whether or not the LED Strip turns to it's last brightness setting when receiving the Color Switch Set Command.",
+            "nl": "Deze parameter (34) bepaalt of de LED Strip het laatste helderheidsniveau instelt bij het ontvangen van een Color Switch Set commando.",
+            "de": "Dieser Parameter (34) bestimmt, ob der LED Strip beim Empfangen des Befehls Color Switch Set auf seine letzte Helligkeitseinstellung zurückkehrt oder nicht."
+          },
+          "zwave": {
+            "index": 34,
+            "size": 1
+          },
+          "value": false
+        },
+        {
+          "id": "white_display_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "Cold/warm white display mode",
+            "nl": "Koud/warm wit weergave modus",
+            "de": "Kalt-/Warmweißmodus"
+          },
+          "hint": {
+            "en": "This parameter (35) determines the display mode for displaying cold or warm white.",
+            "nl": "Deze parameter (35) bepaalt de weergave modus voor het koude en warme witte licht.",
+            "de": "Dieser Parameter (35) bestimmt den Modus von Kalt- oder Warmweiß."
+          },
+          "zwave": {
+            "index": 35,
+            "size": 1
+          },
+          "value": "0",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Arbitrary combination of cold and warm light",
+                "nl": "Arbitraire combinatie tussen koud en warm licht",
+                "de": "Beliebige Kombination von kaltem und warmem Licht"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Complementary combination of cold and warm light",
+                "nl": "Complementaire combinatie tussen koud en warm licht",
+                "de": "Komplementäre Kombination von kaltem und warmem Licht"
+              }
+            }
+          ]
+        },
+        {
+          "id": "colorful_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "Standard color animations",
+            "nl": "Standaard geanimeerde kleuren",
+            "de": "Standard-Farbanimationen"
+          },
+          "hint": {
+            "en": "This parameter (40) sets the LED Strip to display one of the standard color animations.",
+            "nl": "Deze parameter (40) laat de LED Strip een van de standaard animaties weergeven.",
+            "de": "Dieser Paremeter (40) stellt den LED Strip ein um eine der Standardfarbanimationen anzuzeigen"
+          },
+          "zwave": {
+            "index": 40,
+            "size": 1
+          },
+          "value": "0",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "None, turned off",
+                "nl": "Geen, uitgeschakeld",
+                "de": "Keine, ausgeschaltet"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Rainbow mode",
+                "nl": "Regenboog modus",
+                "de": "Regenbogenmodus"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "Multi color mode",
+                "nl": "Multi color modus",
+                "de": "Multi-Farben Modus"
+              }
+            },
+            {
+              "id": "3",
+              "label": {
+                "en": "Blink red",
+                "nl": "Knipperend rood",
+                "de": "Rot blinken"
+              }
+            },
+            {
+              "id": "4",
+              "label": {
+                "en": "Blink green",
+                "nl": "Knipperend groen",
+                "de": "Grün blinken"
+              }
+            },
+            {
+              "id": "5",
+              "label": {
+                "en": "Blink blue",
+                "nl": "Knipperend blauw",
+                "de": "Blau blinken"
+              }
+            }
+          ]
+        },
+        {
+          "id": "state_change_reports",
+          "type": "dropdown",
+          "label": {
+            "en": "Notifications to association group 1",
+            "nl": "Notificaties richting assocatie groep 1",
+            "de": "Benachrichtigungen an die Assoziationsgruppe 1"
+          },
+          "hint": {
+            "en": "This parameter (80) determines the notification command class used for notifications to the 1st association group.",
+            "nl": "Deze parameter (80) bepaalt welke command class er wordt gebruikt voor notificaties richting de 1ste associatie groep.",
+            "de": "Dieser Paremeter (80) bestimmt die Benachrichtigungsbefehlsklasse, die für Benachrichtigungen an die erste Assoziationsgruppe verwendet wird."
+          },
+          "zwave": {
+            "index": 80,
+            "size": 1
+          },
+          "value": "2",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Disabled, none sent",
+                "nl": "Uitgeschakelt, er wordt niets verstuurd",
+                "de": "Deaktiviert, es wird nicht versendet"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Hail command",
+                "nl": "Hail commando",
+                "de": "Hail Befehl"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "Basic command",
+                "nl": "Basic commando",
+                "de": "Basic Befehl"
+              }
+            },
+            {
+              "id": "3",
+              "label": {
+                "en": "Hail command on action button press",
+                "nl": "Hail commando bij indrukken van de actie knop",
+                "de": "Hail Befehl beim drücken der Taste"
+              }
+            }
+          ]
+        },
+        {
+          "id": "dimmer_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "Set the Dimmer mode",
+            "nl": "Stel de dim modus in",
+            "de": "Dimmer Modus"
+          },
+          "hint": {
+            "en": "This parameter (112) determines the dim mode for the LED Strip",
+            "nl": "Deze parameter (112) bepaalt de dim modus voor de LED Strip",
+            "de": "Dieser Parameter (112) bestimmt den Dimm Modus von LED Strip"
+          },
+          "zwave": {
+            "index": 112,
+            "size": 1
+          },
+          "value": "0",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Parabolic curve",
+                "nl": "Prabolische curve",
+                "de": "Parabolische Kurve"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Index curve",
+                "nl": "Index curve",
+                "de": "Index Kurve"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "(Parabolic + Index)/2",
+                "nl": "(Parabolisch + index)/2",
+                "de": "(Parabolisch + index)/2"
+              }
+            },
+            {
+              "id": "3",
+              "label": {
+                "en": "Linear",
+                "nl": "Lineair",
+                "de": "Linear"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

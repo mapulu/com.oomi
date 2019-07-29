@@ -1,0 +1,26 @@
+{
+  "name": "com.oomi",
+  "version": "1.0.0",
+  "description": "This app adds support for Ooomi devices in Homey.",
+  "main": "app.js",
+  "dependencies": {
+    "homey-log": "^1.0.6",
+    "homey-meshdriver": "^1.2.32",
+    "tinycolor2": "^1.4.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "run": "homeyConfig compose; athom project --run",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mapulu/com.oomi.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mapulu/com.oomi/issues"
+  },
+  "homepage": "https://github.com/mapulu/com.oomi#readme"
+}

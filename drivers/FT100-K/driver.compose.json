@@ -1,0 +1,68 @@
+{
+  "id": "FT100-K",
+  "name": {
+    "en": "Multisensor 6",
+	"de": "Multisensor 6-in-1"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_battery",
+    "alarm_motion",
+    "alarm_tamper",
+    "measure_temperature",
+    "measure_luminance",
+    "measure_humidity",
+    "measure_ultraviolet"
+  ],
+  "images": {
+    "large": "{{driverAssetsPath}}/images/large.png",
+    "small": "{{driverAssetsPath}}/images/small.png"
+  },
+  "zwave": {
+    "manufacturerId": 362,
+    "productTypeId": [
+      7426,
+      258
+    ],
+    "productId": 100,
+    "zwaveAllianceProductId": 2592,
+    "zwaveAllianceProductDocumentation": "https://products.z-wavealliance.org/ProductManual/File?folder=&filename=Manuals/2592/Oomi%20MultiSensor%20manual3.pdf",
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/learnmode.svg",
+      "instruction": {
+        "en": "Press the action button on your {{driverNameEn}}.",
+        "nl": "Druk op de actie knop op de {{driverNameNl}}.",
+		"en": "Drücke die Taste am Multisensor 6-in-1."
+      }
+    },
+    "associationGroups": [
+      1
+    ],
+    "associationGroupsOptions": {
+      "1": {
+        "hint": {
+          "en": "This is the lifeline, it is not recommended to remove Homey's id from this association group.",
+          "nl": "Dit is de levenslijn, het is niet aangeraden om Homey's zijn id te verwijderen uit deze associatie groep.",
+		  "de": "Dies ist die lifeline, es wird nicht empfohlen, die ID von Homey aus dieser Assoziationsgruppe zu entfernen."
+        }
+      }
+    },
+    "defaultConfiguration": [
+      {
+        "id": 5,
+        "value": 2,
+        "size": 1
+      },
+      {
+        "id": 40,
+        "value": 1,
+        "size": 1
+      },
+      {
+        "id": 111,
+        "value": 600,
+        "size": 4
+      }
+    ]
+  }
+}
