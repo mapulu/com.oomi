@@ -2,7 +2,9 @@
   "id": "FT100-K",
   "name": {
     "en": "Multisensor 6",
-	"de": "Multisensor 6-in-1"
+    "nl": "Multisensor 6",
+    "de": "Multisensor 6-in-1",
+    "fr": "Multicapteur 6"
   },
   "class": "sensor",
   "capabilities": [
@@ -22,7 +24,8 @@
     "manufacturerId": 362,
     "productTypeId": [
       7426,
-      258
+      258,
+      2
     ],
     "productId": 100,
     "zwaveAllianceProductId": 2592,
@@ -32,7 +35,8 @@
       "instruction": {
         "en": "Press the action button on your {{driverNameEn}}.",
         "nl": "Druk op de actie knop op de {{driverNameNl}}.",
-		"en": "Drücke die Taste am Multisensor 6-in-1."
+	"de": "Drücke die Taste am Multisensor 6-in-1.",
+	"fr": "Appuyez sur le bouton du multicapteur 6"
       }
     },
     "associationGroups": [
@@ -43,7 +47,7 @@
         "hint": {
           "en": "This is the lifeline, it is not recommended to remove Homey's id from this association group.",
           "nl": "Dit is de levenslijn, het is niet aangeraden om Homey's zijn id te verwijderen uit deze associatie groep.",
-		  "de": "Dies ist die lifeline, es wird nicht empfohlen, die ID von Homey aus dieser Assoziationsgruppe zu entfernen."
+	  "de": "Dies ist die lifeline, es wird nicht empfohlen, die ID von Homey aus dieser Assoziationsgruppe zu entfernen."
         }
       }
     },
