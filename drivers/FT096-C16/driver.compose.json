@@ -25,8 +25,9 @@
     "zwaveAllianceProductDocumentation": "https://products.z-wavealliance.org/ProductManual/File?folder=&filename=Manuals/2375/Instructions%20-%20Oomi%20Plug.pdf",
     "learnmode": {
       "instruction": {
-        "en": "Press the (action) button on the Smart Switch to enter learn mode",
-        "nl": "Druk op de (actie) knop op de Smart Switch om de leer modus te activeren"
+        "en": "Press the (action) button on the Plug to enter learn mode",
+        "nl": "Druk op de (actie) knop op de Plug om de leer modus te activeren",
+	"de": "Drücke die (Aktions-)Taste am Plug, um in den Lernmodus zu gelangen."
       }
     },
     "associationGroups": [
