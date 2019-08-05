@@ -70,8 +70,9 @@
         "zwaveAllianceProductDocumentation": "https://products.z-wavealliance.org/ProductManual/File?folder=&filename=Manuals/2375/Instructions%20-%20Oomi%20Plug.pdf",
         "learnmode": {
           "instruction": {
-            "en": "Press the (action) button on the Smart Switch to enter learn mode",
-            "nl": "Druk op de (actie) knop op de Smart Switch om de leer modus te activeren"
+            "en": "Press the (action) button on the Plug to enter learn mode",
+            "nl": "Druk op de (actie) knop op de Plug om de leer modus te activeren",
+	    "de": "Drücke die (Aktions-)Taste am Plug, um in den Lernmodus zu gelangen."
           }
         },
         "associationGroups": [
@@ -601,7 +602,9 @@
       "id": "FT100-K",
       "name": {
         "en": "Multisensor 6",
-        "de": "Multisensor 6-in-1"
+        "nl": "Multisensor 6",
+        "de": "Multisensor 6-in-1",
+        "fr": "Multicapteur 6"
       },
       "class": "sensor",
       "capabilities": [
@@ -621,7 +624,8 @@
         "manufacturerId": 362,
         "productTypeId": [
           7426,
-          258
+          258,
+            2
         ],
         "productId": 100,
         "zwaveAllianceProductId": 2592,
@@ -629,8 +633,10 @@
         "learnmode": {
           "image": "/drivers/FT100-K/assets/learnmode.svg",
           "instruction": {
-            "en": "Drücke die Taste am Multisensor 6-in-1.",
-            "nl": "Druk op de actie knop op de Multisensor 6."
+              "en": "Press the action button on your Multisensor 6.",
+              "nl": "Druk op de actie knop op de Multisensor 6.",
+	      "de": "Drücke die Taste am Multisensor 6-in-1.",
+	      "fr": "Appuyez sur le bouton du multicapteur 6"
           }
         },
         "associationGroups": [
