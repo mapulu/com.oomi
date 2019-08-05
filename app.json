@@ -4,7 +4,7 @@
     "en": "Oomi",
 	"de": "Oomi"
   },
-  "version": "1.0.0",
+  "version": "1.0.1",
   "compatibility": ">=2.4.0",
   "sdk": 2,
   "brandColor": "#ff781a",
