@@ -8,4 +8,7 @@ You can write me a message at Athom Community [@mapulu](https://community.athom.
 
 ### Changelog:
 **1.0.0**
+Add Product-Type ID for Multisensor 6
+
+**1.0.0**
 First initial version
