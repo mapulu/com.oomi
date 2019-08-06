@@ -2,7 +2,7 @@
   "id": "com.oomi",
   "name": {
     "en": "Oomi",
-	"de": "Oomi"
+    "de": "Oomi"
   },
   "version": "1.0.1",
   "compatibility": ">=2.4.0",
@@ -35,13 +35,13 @@
       }
     ]
   },
-   "contributing": {
-        "donate": {
-            "paypal": {
-                "username": "mapulu"
-            }
-        }
-},
+  "contributing": {
+    "donate": {
+      "paypal": {
+        "username": "mapulu"
+      }
+    }
+  },
   "drivers": [
     {
       "id": "FT096-C16",
@@ -72,7 +72,7 @@
           "instruction": {
             "en": "Press the (action) button on the Plug to enter learn mode",
             "nl": "Druk op de (actie) knop op de Plug om de leer modus te activeren",
-	    "de": "Drücke die (Aktions-)Taste am Plug, um in den Lernmodus zu gelangen."
+            "de": "Drücke die (Aktions-)Taste am Plug, um in den Lernmodus zu gelangen."
           }
         },
         "associationGroups": [
@@ -599,6 +599,293 @@
       ]
     },
     {
+      "id": "FT098-K",
+      "name": {
+        "en": "LED Bulb",
+        "nl": "LED lamp"
+      },
+      "class": "light",
+      "capabilities": [
+        "light_saturation",
+        "light_temperature",
+        "dim",
+        "light_hue",
+        "light_mode",
+        "onoff"
+      ],
+      "images": {
+        "large": "/drivers/FT098-K/assets/images/large.png",
+        "small": "/drivers/FT098-K/assets/images/small.png"
+      },
+      "zwave": {
+        "manufacturerId": 362,
+        "productTypeId": [
+          3,
+          515,
+          7427
+        ],
+        "productId": [
+          98
+        ],
+        "zwaveAllianceProductId": 2607,
+        "zwaveAllianceProductDocumentation": "https://products.z-wavealliance.org/ProductManual/File?folder=&filename=Manuals/2607/Bulb%20manual.pdf",
+        "learnmode": {
+          "image": "/drivers/FT098-K/assets/learnmode.svg",
+          "instruction": {
+            "en": "Quickly turn the LED Bulb off and on again. For secure pairing quickly turn the LED Bulb off and on 5 times.",
+            "nl": "Schakel de LED lamp snel uit en aan. Voor beveiligd koppelen schakel de LED lamp 5 keer snel uit en aan."
+          }
+        },
+        "unlearnmode": {
+          "instruction": {
+            "en": "Quickly turn the LED Bulb off and on again 5 times.",
+            "nl": "Schakel de LED lamp vijf maal snel uit en aan."
+          }
+        },
+        "associationGroups": [
+          2
+        ],
+        "associationGroupsOptions": {
+          "1": {
+            "hint": {
+              "en": "The association group 1 is the Z-Wave Lifeline group. The Hail CC and Basic Report CC (configurable) will be sent to the associated nodes.",
+              "nl": "De 1e associatie groep is de Z-Wave levenslijn groep. De Hail CC en Basic Report CC (configureerbaar) worden verzonden naar de apparaten in deze groep."
+            }
+          },
+          "2": {
+            "hint": {
+              "en": "Forwarding group for all commands sent to the LED Bulb by the main controller.",
+              "nl": "Doorstuur groep voor alle commando's verstuurd naar de LED lamp door de main controller."
+            }
+          }
+        },
+        "defaultConfiguration": [
+          {
+            "id": 80,
+            "value": 2,
+            "size": 1
+          }
+        ]
+      },
+      "settings": [
+        {
+          "id": "dimmer_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "Set the Dimmer mode",
+            "nl": "Stel de dim modus in",
+            "de": "Dimmer Modus"
+          },
+          "hint": {
+            "en": "This parameter (112) determines the dim mode for the LED Bulb",
+            "nl": "Deze parameter (112) bepaalt de dim modus voor de LED lamp",
+            "de": "Dieser Parameter (112) bestimmt den Dimm Modus von LED Bulb"
+          },
+          "zwave": {
+            "index": 112,
+            "size": 1
+          },
+          "value": "0",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Parabolic curve",
+                "nl": "Prabolische curve",
+                "de": "Parabolische Kurve"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Index curve",
+                "nl": "Index curve",
+                "de": "Index Kurve"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "(Parabolic + Index)/2",
+                "nl": "(Parabolisch + index)/2",
+                "de": "(Parabolisch + index)/2"
+              }
+            },
+            {
+              "id": "3",
+              "label": {
+                "en": "Linear",
+                "nl": "Lineair",
+                "de": "Linear"
+              }
+            }
+          ]
+        },
+        {
+          "id": "power_off_state_recovery",
+          "type": "dropdown",
+          "label": {
+            "en": "State recovery after power loss",
+            "nl": "Status herstel na stroomuitval"
+          },
+          "hint": {
+            "en": "This parameter (20) determines the behaviour of the LED Bulb after power loss.",
+            "nl": "Deze parameter (20) bepaalt het gedrag van de LED lamp na stroomuitval.",
+            "de": "Dieser Parameter (20) bestimmt das Verhalten des LED Bulb nach Stromausfall."
+          },
+          "zwave": {
+            "index": 20,
+            "size": 1
+          },
+          "value": "0",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Recover last state before power loss",
+                "nl": "Herstel de laatste status voor de stroomuitval",
+                "de": "Letzter Zustand vor Stromausfall wiederherstellen"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Always turn on",
+                "nl": "Altijd aan",
+                "de": "Immer einschalten"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "Always turn off",
+                "nl": "Altijd uit",
+                "de": "Immer ausschalten"
+              }
+            }
+          ]
+        },
+        {
+          "id": "32",
+          "type": "dropdown",
+          "label": {
+            "en": "Enable/disable to send out a report when the color is changed",
+            "nl": "Inschakelen/uitschakelen om een rapport te verzenden wanneer de kleur wordt gewijzigd",
+            "de": "Aktivieren/Deaktivieren, einen Bericht zu senden, wenn die Farbe geändert wurde"
+          },
+          "hint": {
+            "en": "This parameter (32) determines if the device send out a report when the color is changed.",
+            "nl": "Deze parameter (32) bepaalt of het apparaat een rapport verstuurt wanneer de kleur wordt gewijzigd.",
+            "de": "Dieser Parameter (32) legt fest, ob das Gerät beim Ändern der Farbe einen Bericht sendet."
+          },
+          "zwave": {
+            "index": 32,
+            "size": 1
+          },
+          "value": "0",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Disable",
+                "nl": "Uitschakelen",
+                "de": "Deaktiviert"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Hail CC",
+                "nl": "Hail CC",
+                "de": "Hail CC"
+              }
+            }
+          ]
+        },
+        {
+          "id": "80",
+          "type": "dropdown",
+          "label": {
+            "en": "To set which notification can be sent to the associated devices (Group 1) when the state of LED Bulb is changed",
+            "nl": "Instellen welke meldingen naar de bijbehorende apparaten (groep 1) kunnen worden verzonden wanneer de toestand van de LED-lamp wordt gewijzigd",
+            "de": "Stellt ein, welche Benachrichtigung an die zugehörigen Geräte (Gruppe 1) gesendet wird kann, wenn der Zustand der LED-Glühbirne geändert wird"
+          },
+          "hint": {
+            "en": "To set which notification can be sent to the associated devices (Group 1) when the state of LED Bulb is changed",
+            "nl": "Instellen welke meldingen naar de bijbehorende apparaten (groep 1) kunnen worden verzonden wanneer de toestand van de LED-lamp wordt gewijzigd",
+            "de": "Stellt ein, welche Benachrichtigung an die zugehörigen Geräte (Gruppe 1) gesendet wird kann, wenn der Zustand der LED-Glühbirne geändert wird"
+          },
+          "zwave": {
+            "index": 80,
+            "size": 1
+          },
+          "value": "2",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Nothing",
+                "nl": "Niets",
+                "de": "Keine"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Hail CC",
+                "nl": "Hail CC",
+                "de": "Hail CC"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "Basic CC report",
+                "nl": "Basic CC report",
+                "de": "Basic CC report"
+              }
+            }
+          ]
+        },
+        {
+          "id": "34",
+          "type": "checkbox",
+          "label": {
+            "en": "Enable external switch to turn on/off the bulb",
+            "nl": "Laat externe knop de lamp aan en uit zetten"
+          },
+          "hint": {
+            "en": "Enable/disable the function of using External Switch to turn on/off the bulb",
+            "nl": "Laat externe knop de lamp aan en uit zetten",
+            "de": "Aktivieren/Deaktivieren der Funktion des externen Schalters zum Ein- und Ausschalten der Lampe"
+          },
+          "zwave": {
+            "index": 34,
+            "size": 1
+          },
+          "value": false
+        },
+        {
+          "id": "35",
+          "type": "checkbox",
+          "label": {
+            "en": "Enable external switch to change the color of the bulb",
+            "nl": "Laat externe knop de kleur van de lamp aanpassen"
+          },
+          "hint": {
+            "en": "Enable/disable the function of using External Switch to changes the bulbs color",
+            "nl": "Laat externe knop de kleur van de lamp aanpassen",
+            "de": "Aktivieren/Deaktivieren der Funktion des externen Schalters zum Ändern der Lampenfarbe"
+          },
+          "zwave": {
+            "index": 35,
+            "size": 1
+          },
+          "value": false
+        }
+      ]
+    },
+    {
       "id": "FT100-K",
       "name": {
         "en": "Multisensor 6",
@@ -625,7 +912,7 @@
         "productTypeId": [
           7426,
           258,
-            2
+          2
         ],
         "productId": 100,
         "zwaveAllianceProductId": 2592,
@@ -633,10 +920,10 @@
         "learnmode": {
           "image": "/drivers/FT100-K/assets/learnmode.svg",
           "instruction": {
-              "en": "Press the action button on your Multisensor 6.",
-              "nl": "Druk op de actie knop op de Multisensor 6.",
-	      "de": "Drücke die Taste am Multisensor 6-in-1.",
-	      "fr": "Appuyez sur le bouton du multicapteur 6"
+            "en": "Press the action button on your Multisensor 6.",
+            "nl": "Druk op de actie knop op de Multisensor 6.",
+            "de": "Drücke die Taste am Multisensor 6-in-1.",
+            "fr": "Appuyez sur le bouton du multicapteur 6"
           }
         },
         "associationGroups": [
@@ -1112,10 +1399,14 @@
       "zwave": {
         "manufacturerId": 362,
         "productTypeId": [
+          2,
+          2562,
+          514,
           7426
         ],
         "productId": [
-          100
+          100,
+          112
         ],
         "zwaveAllianceProductId": 2653,
         "zwaveAllianceProductDocumentation": "https://products.z-wavealliance.org/ProductManual/File?folder=&filename=Manuals/2653/Oomi%20Door%20Window%20Sensor%20manual.pdf",
@@ -1266,7 +1557,8 @@
       "zwave": {
         "manufacturerId": 362,
         "productTypeId": [
-          3
+          3,
+          515
         ],
         "productId": [
           121
@@ -1590,5 +1882,77 @@
         }
       ]
     }
-  ]
+  ],
+  "flow": {
+    "actions": [
+      {
+        "id": "ft098-k_rainbow",
+        "title": {
+          "en": "Rainbow color mode",
+          "nl": "Regenboog kleuren modus"
+        },
+        "hint": {
+          "en": "Number of cycles (0 - 254, where 0 is unlimited). Color transition speed (0 - 100, where 100 is fastest).",
+          "nl": "Aantal cycli (0 - 254, waarbij 0 oneindig is). Kleur overgangssnelheid (0 - 100, waarbij 100 het snelst is)."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FT098-K"
+          },
+          {
+            "name": "cycles",
+            "type": "number",
+            "min": 0,
+            "max": 254,
+            "step": 1,
+            "placeholder": {
+              "en": "Number of cycles",
+              "nl": "Aantal cycli"
+            }
+          },
+          {
+            "name": "speed",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "placeholder": {
+              "en": "Color transition speed",
+              "nl": "Kleur overgangssnelheid"
+            }
+          },
+          {
+            "name": "fadeType",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "0",
+                "label": {
+                  "en": "Smooth color transition",
+                  "nl": "Soepele kleur overgang"
+                }
+              },
+              {
+                "id": "1",
+                "label": {
+                  "en": "Direct color transition",
+                  "nl": "Directe kleur overgang"
+                }
+              },
+              {
+                "id": "2",
+                "label": {
+                  "en": "Fade out fade in color transition",
+                  "nl": "Langzaam gedimde kleur overgang"
+                }
+              }
+            ],
+            "value": "0"
+          }
+        ]
+      }
+    ]
+  }
 }

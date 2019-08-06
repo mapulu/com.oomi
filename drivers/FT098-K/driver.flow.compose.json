@@ -1,0 +1,69 @@
+{
+  "triggers": [],
+  "conditions": [],
+  "actions": [
+    {
+      "id": "ft098-k_rainbow",
+      "title": {
+        "en": "Rainbow color mode",
+        "nl": "Regenboog kleuren modus"
+      },
+      "hint": {
+        "en": "Number of cycles (0 - 254, where 0 is unlimited). Color transition speed (0 - 100, where 100 is fastest).",
+        "nl": "Aantal cycli (0 - 254, waarbij 0 oneindig is). Kleur overgangssnelheid (0 - 100, waarbij 100 het snelst is)."
+      },
+      "args": [
+        {
+          "name": "cycles",
+          "type": "number",
+          "min": 0,
+          "max": 254,
+          "step": 1,
+          "placeholder": {
+            "en": "Number of cycles",
+            "nl": "Aantal cycli"
+          }
+        },
+        {
+          "name": "speed",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "placeholder": {
+            "en": "Color transition speed",
+            "nl": "Kleur overgangssnelheid"
+          }
+        },
+        {
+          "name": "fadeType",
+          "type": "dropdown",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Smooth color transition",
+                "nl": "Soepele kleur overgang"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Direct color transition",
+                "nl": "Directe kleur overgang"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "Fade out fade in color transition",
+                "nl": "Langzaam gedimde kleur overgang"
+              }
+            }
+          ],
+          "value": "0"
+        }
+      ]
+    }
+  ]
+}

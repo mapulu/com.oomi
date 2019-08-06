@@ -1,0 +1,217 @@
+[
+ {
+    "id": "dimmer_mode",
+    "type": "dropdown",
+    "label": {
+      "en": "Set the Dimmer mode",
+      "nl": "Stel de dim modus in",
+	  "de": "Dimmer Modus"
+    },
+    "hint": {
+      "en": "This parameter ({{zwaveParameterIndex}}) determines the dim mode for the {{driverNameEn}}",
+      "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt de dim modus voor de {{driverNameNl}}",
+	  "de": "Dieser Parameter ({{zwaveParameterIndex}}) bestimmt den Dimm Modus von {{driverNameEn}}"
+    },
+    "zwave": {
+      "index": 112,
+      "size": 1
+    },
+    "value": "0",
+    "values": [
+      {
+        "id": "0",
+        "label": {
+          "en": "Parabolic curve",
+          "nl": "Prabolische curve",
+		  "de": "Parabolische Kurve"
+        }
+      },
+      {
+        "id": "1",
+        "label": {
+          "en": "Index curve",
+          "nl": "Index curve",
+		  "de": "Index Kurve"
+        }
+      },
+      {
+        "id": "2",
+        "label": {
+          "en": "(Parabolic + Index)/2",
+          "nl": "(Parabolisch + index)/2",
+		  "de": "(Parabolisch + index)/2"
+        }
+      },
+      {
+        "id": "3",
+        "label": {
+          "en": "Linear",
+          "nl": "Lineair",
+		  "de": "Linear"
+        }
+      }
+    ]
+  },
+    {
+    "id": "power_off_state_recovery",
+    "type": "dropdown",
+    "label": {
+      "en": "State recovery after power loss",
+      "nl": "Status herstel na stroomuitval"
+    },
+    "hint": {
+      "en": "This parameter ({{zwaveParameterIndex}}) determines the behaviour of the {{driverNameEn}} after power loss.",
+      "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt het gedrag van de {{driverNameNl}} na stroomuitval.",
+	  "de": "Dieser Parameter ({{zwaveParameterIndex}}) bestimmt das Verhalten des {{driverNameEn}} nach Stromausfall."
+    },
+    "zwave": {
+      "index": 20,
+      "size": 1
+    },
+    "value": "0",
+    "values": [
+      {
+        "id": "0",
+        "label": {
+          "en": "Recover last state before power loss",
+          "nl": "Herstel de laatste status voor de stroomuitval",
+		  "de": "Letzter Zustand vor Stromausfall wiederherstellen"
+        }
+      },
+      {
+        "id": "1",
+        "label": {
+          "en": "Always turn on",
+          "nl": "Altijd aan",
+		  "de": "Immer einschalten"
+        }
+      },
+      {
+        "id": "2",
+        "label": {
+          "en": "Always turn off",
+          "nl": "Altijd uit",
+		  "de": "Immer ausschalten"
+        }
+      }
+    ]
+  },
+   {
+    "id": "32",
+    "type": "dropdown",
+    "label": {
+      "en": "Enable/disable to send out a report when the color is changed",
+      "nl": "Inschakelen/uitschakelen om een rapport te verzenden wanneer de kleur wordt gewijzigd",
+	  "de": "Aktivieren/Deaktivieren, einen Bericht zu senden, wenn die Farbe geändert wurde"
+    },
+    "hint": {
+      "en": "This parameter ({{zwaveParameterIndex}}) determines if the device send out a report when the color is changed.",
+      "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt of het apparaat een rapport verstuurt wanneer de kleur wordt gewijzigd.",
+	  "de": "Dieser Parameter ({{zwaveParameterIndex}}) legt fest, ob das Gerät beim Ändern der Farbe einen Bericht sendet."
+    },
+    "zwave": {
+      "index": 32,
+      "size": 1
+    },
+    "value": "0",
+    "values": [
+      {
+        "id": "0",
+        "label": {
+          "en": "Disable",
+          "nl": "Uitschakelen",
+		  "de": "Deaktiviert"
+        }
+      },
+      {
+        "id": "1",
+        "label": {
+          "en": "Hail CC",
+          "nl": "Hail CC",
+		  "de": "Hail CC"
+        }
+      }
+    ]
+  },
+  {
+    "id": "80",
+    "type": "dropdown",
+    "label": {
+      "en": "To set which notification can be sent to the associated devices (Group 1) when the state of LED Bulb is changed",
+      "nl": "Instellen welke meldingen naar de bijbehorende apparaten (groep 1) kunnen worden verzonden wanneer de toestand van de LED-lamp wordt gewijzigd",
+	  "de": "Stellt ein, welche Benachrichtigung an die zugehörigen Geräte (Gruppe 1) gesendet wird kann, wenn der Zustand der LED-Glühbirne geändert wird"
+    },
+    "hint": {
+      "en": "To set which notification can be sent to the associated devices (Group 1) when the state of LED Bulb is changed",
+      "nl": "Instellen welke meldingen naar de bijbehorende apparaten (groep 1) kunnen worden verzonden wanneer de toestand van de LED-lamp wordt gewijzigd",
+	  "de": "Stellt ein, welche Benachrichtigung an die zugehörigen Geräte (Gruppe 1) gesendet wird kann, wenn der Zustand der LED-Glühbirne geändert wird"
+    },
+    "zwave": {
+      "index": 80,
+      "size": 1
+    },
+    "value": "2",
+    "values": [
+      {
+        "id": "0",
+        "label": {
+          "en": "Nothing",
+          "nl": "Niets",
+		  "de": "Keine"
+        }
+      },
+      {
+        "id": "1",
+        "label": {
+          "en": "Hail CC",
+          "nl": "Hail CC",
+		  "de": "Hail CC"
+        }
+      },
+	   {
+        "id": "2",
+        "label": {
+          "en": "Basic CC report",
+          "nl": "Basic CC report",
+		  "de": "Basic CC report"
+        }
+      }
+    ]
+  },  
+  {
+    "id": "34",
+    "type": "checkbox",
+    "label": {
+      "en": "Enable external switch to turn on/off the bulb",
+      "nl": "Laat externe knop de lamp aan en uit zetten"
+    },
+    "hint": {
+      "en": "Enable/disable the function of using External Switch to turn on/off the bulb",
+      "nl": "Laat externe knop de lamp aan en uit zetten",
+	  "de": "Aktivieren/Deaktivieren der Funktion des externen Schalters zum Ein- und Ausschalten der Lampe"
+    },
+    "zwave": {
+      "index": 34,
+      "size": 1
+    },
+    "value": false
+  },
+    {
+    "id": "35",
+    "type": "checkbox",
+    "label": {
+      "en": "Enable external switch to change the color of the bulb",
+      "nl": "Laat externe knop de kleur van de lamp aanpassen"
+    },
+    "hint": {
+      "en": "Enable/disable the function of using External Switch to changes the bulbs color",
+      "nl": "Laat externe knop de kleur van de lamp aanpassen",
+	  "de": "Aktivieren/Deaktivieren der Funktion des externen Schalters zum Ändern der Lampenfarbe"
+    },
+    "zwave": {
+      "index": 35,
+      "size": 1
+    },
+    "value": false
+  }
+]
