@@ -1,0 +1,63 @@
+{
+  "id": "FT111-C",
+  "name": {
+    "en": "In-Wall Dimmer"
+  },
+  "class": "light",
+  "capabilities": [
+    "dim",
+    "measure_power",
+    "meter_power",
+    "onoff"
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "setOnDim": false
+    }
+  },
+  "images": {
+    "large": "{{driverAssetsPath}}/images/large.png",
+    "small": "{{driverAssetsPath}}/images/small.png"
+  },
+  "zwave": {
+    "manufacturerId": 362,
+    "productTypeId": [
+      3,
+      515
+    ],
+    "productId": [
+      111
+    ],
+    "zwaveAllianceProductId": 2274,
+    "zwaveAllianceProductDocumentation": "https://products.z-wavealliance.org/ProductManual/File?folder=&filename=Manuals/2274/Oomi%20In-Wall%20Dimmer%20manual%20(FT111-C)%20-%202.pdf",
+    "learnmode": {
+      "instruction": {
+        "en": "Short press the action button on the back of the In-Wall Dimmer. For secure pairing press the action button twice.",
+        "nl": "Druk kort op de actie knop op de achterkant van de In-Wall Dimmer. Voor beveiligd koppelen druk tweemaal op de actie knop.",
+		"de": "Drücke kurz die Aktionstaste auf der Rückseite des In-Wall Dimmer. Um eine sichere Verbindung herzustellen, drücken die Aktionstaste zweimal."
+      }
+    },
+    "associationGroups": [
+      1,
+      3,
+      4
+    ],
+    "defaultConfiguration": [
+      {
+        "id": 80,
+        "value": 2,
+        "size": 1
+      },
+      {
+        "id": 90,
+        "size": 1,
+        "value": 1
+      },
+      {
+        "id": 92,
+        "size": 1,
+        "value": 30
+      }
+    ]
+  }
+}

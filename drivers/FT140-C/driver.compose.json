@@ -1,0 +1,67 @@
+{
+  "id": "FT140-C",
+  "name": {
+    "en": "Dual In-Wall Switch"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff"
+  ],
+  "images": {
+    "large": "{{driverAssetsPath}}/images/large.png",
+    "small": "{{driverAssetsPath}}/images/small.png"
+  },
+  "zwave": {
+    "manufacturerId": 362,
+    "productTypeId": [
+      3,
+      515
+    ],
+    "productId": [
+      132,
+      140
+    ],
+    "zwaveAllianceProductId": 2335,
+    "zwaveAllianceProductDocumentation": "https://products.z-wavealliance.org/ProductManual/File?folder=&filename=Manuals/2335/Oomi%20Dual%20In-Wall%20Switch%20manual%20(FT140-C)%20-%202.pdf",
+    "learnmode": {
+      "instruction": {
+        "en": "Press the action button on the back of the {{driverNameEn}}.",
+        "nl": "Druk op de actie knop op de achterkant van de {{driverNameNl}}.",
+		"de": "Drücke die Aktionstaste auf der Rückseite vom {{driverNameEn}}."
+      }
+    },
+    "associationGroups": [
+      1
+    ],
+    "defaultConfiguration": [
+      {
+        "id": 80,
+        "value": 2,
+        "size": 1
+      }
+    ],
+    "associationGroupsMultiChannel": [ 3, 4 ],
+    "multiChannelNodes": {
+      "1": {
+        "name": {
+          "en": "Dual In-Wall Switch 1"
+        },
+        "icon": "{{driverAssetsPath}}/icon.svg",
+        "class": "light",
+        "capabilities": [
+          "onoff"
+        ]
+      },
+      "2": {
+        "name": {
+          "en": "Dual In-Wall Switch 2"
+        },
+        "icon": "{{driverAssetsPath}}/icon.svg",
+        "class": "light",
+        "capabilities": [
+          "onoff"
+        ]
+      }
+    }
+  }
+}

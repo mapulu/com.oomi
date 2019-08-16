@@ -4,10 +4,14 @@ const ZwaveDevice = require('homey-meshdriver').ZwaveDevice;
 const zwaveUtils = require('homey-meshdriver').Util;
 
 class OomiLEDBulbDevice extends ZwaveDevice {
-	onMeshInit() {
-		this.registerCapability('onoff', 'SWITCH_MULTILEVEL');
-		this.registerCapability('dim', 'SWITCH_MULTILEVEL');
+	async onMeshInit() {	
 
+		this.registerCapability('onoff', 'BASIC');
+		this.registerCapability('dim', 'BASIC');
+		//this.printNode();
+		//this.enableDebug();
+
+		
 		this.registerMultipleCapabilityListener(['light_hue', 'light_saturation', 'light_temperature', 'light_mode'], async (values, options) => {
 		    let rgb = {red: 0, green: 0, blue: 0};
             let temp = {cw: 0, ww: 0};
@@ -60,7 +64,7 @@ class OomiLEDBulbDevice extends ZwaveDevice {
             // Map speed 100 - 0 to 0 - 254
             args.speed = Math.round(this._map(100, 0, 0, 254, args.speed));
 
-            // Get fadeType as integer
+            // Get fadeType as integerapi/manager/zwave/command
             args.fadeType = parseInt(args.fadeType);
 
             // Round cycles
@@ -166,6 +170,20 @@ class OomiLEDBulbDevice extends ZwaveDevice {
             ]
         });
     }
+
+    getApi() {
+
+        if (!this.api) {
+            this.api = HomeyAPI.forCurrentHomey();
+        }
+        return this.api;
+    }	
+	
 }
+
+
+
+
+
 
 module.exports = OomiLEDBulbDevice;

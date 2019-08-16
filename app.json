@@ -4,7 +4,7 @@
     "en": "Oomi",
     "de": "Oomi"
   },
-  "version": "1.0.1",
+  "version": "1.0.2",
   "compatibility": ">=2.4.0",
   "sdk": 2,
   "brandColor": "#ff781a",
@@ -1382,6 +1382,313 @@
       ]
     },
     {
+      "id": "FT111-C",
+      "name": {
+        "en": "In-Wall Dimmer"
+      },
+      "class": "light",
+      "capabilities": [
+        "dim",
+        "measure_power",
+        "meter_power",
+        "onoff"
+      ],
+      "capabilitiesOptions": {
+        "onoff": {
+          "setOnDim": false
+        }
+      },
+      "images": {
+        "large": "/drivers/FT111-C/assets/images/large.png",
+        "small": "/drivers/FT111-C/assets/images/small.png"
+      },
+      "zwave": {
+        "manufacturerId": 362,
+        "productTypeId": [
+          3,
+          515
+        ],
+        "productId": [
+          111
+        ],
+        "zwaveAllianceProductId": 2274,
+        "zwaveAllianceProductDocumentation": "https://products.z-wavealliance.org/ProductManual/File?folder=&filename=Manuals/2274/Oomi%20In-Wall%20Dimmer%20manual%20(FT111-C)%20-%202.pdf",
+        "learnmode": {
+          "instruction": {
+            "en": "Short press the action button on the back of the In-Wall Dimmer. For secure pairing press the action button twice.",
+            "nl": "Druk kort op de actie knop op de achterkant van de In-Wall Dimmer. Voor beveiligd koppelen druk tweemaal op de actie knop.",
+            "de": "Drücke kurz die Aktionstaste auf der Rückseite des In-Wall Dimmer. Um eine sichere Verbindung herzustellen, drücken die Aktionstaste zweimal."
+          }
+        },
+        "associationGroups": [
+          1,
+          3,
+          4
+        ],
+        "defaultConfiguration": [
+          {
+            "id": 80,
+            "value": 2,
+            "size": 1
+          },
+          {
+            "id": 90,
+            "size": 1,
+            "value": 1
+          },
+          {
+            "id": 92,
+            "size": 1,
+            "value": 30
+          }
+        ]
+      },
+      "settings": [
+        {
+          "id": "20",
+          "type": "dropdown",
+          "label": {
+            "en": "Configure the output load status after re-power",
+            "nl": "Zet na een stroomonderbreking deze status"
+          },
+          "hint": {
+            "en": "This parameter (20) determines the behaviour of the device after power loss.",
+            "nl": "Deze parameter (20) bepaalt het gedrag van het apparaat na stroom uitval."
+          },
+          "zwave": {
+            "index": 20,
+            "size": 1
+          },
+          "value": "0",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Status before re-power",
+                "nl": "Status voor stroomonderbreking"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Always on",
+                "nl": "Altijd aan"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "Always off",
+                "nl": "Altijd uit"
+              }
+            }
+          ]
+        },
+        {
+          "id": "81",
+          "type": "dropdown",
+          "label": {
+            "en": "Reports to association group 3",
+            "nl": "Metingen naar associatie groep 3"
+          },
+          "hint": {
+            "en": "This parameter (81) determines which reports are send to the devices in association group 3.",
+            "nl": "Deze parameter (81) bepaalt welke rapporten er worden verstuurd naar de apparaten in de 3e associatie groep."
+          },
+          "zwave": {
+            "index": 81,
+            "size": 1
+          },
+          "value": "1",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Nothing",
+                "nl": "Niets"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Basic Set",
+                "nl": "Basic Set"
+              }
+            }
+          ]
+        },
+        {
+          "id": "82",
+          "type": "dropdown",
+          "label": {
+            "en": "Reports to association group 4",
+            "nl": "Metingen naar associatie groep 4"
+          },
+          "hint": {
+            "en": "This parameter (82) determines which reports are send to the devices in association group 4.",
+            "nl": "Deze parameter (82) bepaalt welke rapporten er worden verstuurd naar de apparaten in de 4e associatie groep."
+          },
+          "zwave": {
+            "index": 82,
+            "size": 1
+          },
+          "value": "1",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Nothing",
+                "nl": "Niets"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Basic Set",
+                "nl": "Basic Set"
+              }
+            }
+          ]
+        },
+        {
+          "id": "91",
+          "type": "number",
+          "label": {
+            "en": "Minimum wattage change needed before an update report is send",
+            "nl": "Minimale verandering in wattage nodig voor het verzenden van een update"
+          },
+          "hint": {
+            "en": "This parameter (91) determines the minimum value change before a report is being send to Homey.",
+            "nl": "Deze parameter (91) bepaalt de minimale waardeverandering voordat er een rapport wordt verzonden naar Homey."
+          },
+          "zwave": {
+            "index": 91,
+            "size": 2
+          },
+          "attr": {
+            "min": 0,
+            "max": 32000
+          },
+          "value": 25
+        },
+        {
+          "id": "92",
+          "type": "number",
+          "label": {
+            "en": "Minimum wattage change (%) needed before an update report is send",
+            "nl": "Minimale verandering in wattage (%) nodig voor het verzenden van een update"
+          },
+          "hint": {
+            "en": "This parameter (92) determines the minimum percentage change before a report is being send to Homey.",
+            "nl": "Deze parameter (92) bepaalt de minimale verandering in percentage voordat er een rapport wordt verzonden naar Homey"
+          },
+          "zwave": {
+            "index": 92,
+            "size": 2
+          },
+          "attr": {
+            "min": 0,
+            "max": 100
+          },
+          "value": 30
+        },
+        {
+          "id": "120",
+          "type": "dropdown",
+          "label": {
+            "en": "Switch type input 1",
+            "nl": "Schakelaar type input 1"
+          },
+          "hint": {
+            "en": "This parameter (120) determines the input device mode for input 1.",
+            "nl": "Deze parameter (120) bepaalt de modus voor het invoer apparaat verbonden aan ingang 1."
+          },
+          "zwave": {
+            "index": 120,
+            "size": 1
+          },
+          "value": "0",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Automatic",
+                "nl": "Automatisch"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Momentary switch",
+                "nl": "Pulsdruk schakelaar"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "3-way switch mode",
+                "nl": "3-way schakel modus"
+              }
+            },
+            {
+              "id": "3",
+              "label": {
+                "en": "2-state switch mode",
+                "nl": "2-state schakel modus"
+              }
+            }
+          ]
+        },
+        {
+          "id": "121",
+          "type": "dropdown",
+          "label": {
+            "en": "Switch type input 2",
+            "nl": "Schakelaar type input 2"
+          },
+          "hint": {
+            "en": "This parameter (121) determines the input device mode for input 2.",
+            "nl": "Deze parameter (121) bepaalt de modus voor het invoer apparaat verbonden aan ingang 2."
+          },
+          "zwave": {
+            "index": 121,
+            "size": 1
+          },
+          "value": "0",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Automatic",
+                "nl": "Automatisch"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Momentary switch",
+                "nl": "Pulsdruk schakelaar"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "3-way switch mode",
+                "nl": "3-way schakel modus"
+              }
+            },
+            {
+              "id": "3",
+              "label": {
+                "en": "2-state switch mode",
+                "nl": "2-state schakel modus"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "FT112-K",
       "name": {
         "en": "Door/Window Sensor 6",
@@ -1876,6 +2183,542 @@
                 "en": "Linear",
                 "nl": "Lineair",
                 "de": "Linear"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "FT139-C",
+      "name": {
+        "en": "In-Wall Switch"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff"
+      ],
+      "images": {
+        "large": "/drivers/FT139-C/assets/images/large.png",
+        "small": "/drivers/FT139-C/assets/images/small.png"
+      },
+      "zwave": {
+        "manufacturerId": 362,
+        "productTypeId": [
+          3,
+          515
+        ],
+        "productId": [
+          139
+        ],
+        "zwaveAllianceProductId": 2332,
+        "zwaveAllianceProductDocumentation": "https://products.z-wavealliance.org/ProductManual/File?folder=&filename=Manuals/2332/Oomi%20In-Wall%20Switch%20manual(FT139).pdf",
+        "learnmode": {
+          "instruction": {
+            "en": "Press the action button on the back of the In-Wall Switch.",
+            "nl": "Druk op de actie knop op de achterkant van de In-Wall Switch.",
+            "de": "Drücke die Aktionstaste auf der Rückseite vom In-Wall Switch."
+          }
+        },
+        "associationGroups": [
+          1,
+          3,
+          4
+        ],
+        "associationGroupsOptions": {
+          "1": {
+            "hint": {
+              "en": "Z-Wave Plus Lifeline.\r\nWhen the load state of Nano Switch (turn on/off the load) is changed, the Hail CC and Basic Report (configured by parameter 80) can be sent to the associated nodes in this group."
+            }
+          }
+        },
+        "defaultConfiguration": [
+          {
+            "id": 80,
+            "value": 2,
+            "size": 1
+          },
+          {
+            "id": 90,
+            "size": 1,
+            "value": 1
+          },
+          {
+            "id": 92,
+            "size": 1,
+            "value": 30
+          }
+        ]
+      },
+      "settings": [
+        {
+          "id": "20",
+          "type": "dropdown",
+          "label": {
+            "en": "Default behaviour after re-power",
+            "nl": "Standaard gedrag na stroomonderbreking"
+          },
+          "hint": {
+            "en": "This parameter (20) determines the behaviour after power was disconnected.",
+            "nl": "Deze parameter (20) bepaalt het gedrag nadat de stroomtoevoer is verbroken."
+          },
+          "zwave": {
+            "index": 20,
+            "size": 1
+          },
+          "value": "0",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Status before re-power",
+                "nl": "Status voor stroomonderbreking"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Always on",
+                "nl": "Altijd aan"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "Always off",
+                "nl": "Altijd uit"
+              }
+            }
+          ]
+        },
+        {
+          "id": "81",
+          "type": "dropdown",
+          "label": {
+            "en": "Reports to association group 3",
+            "nl": "Updates naar associatie groep 3"
+          },
+          "hint": {
+            "en": "This parameter (81) determines what reports are sent to association group 3.",
+            "nl": "Deze parameter (81) bepaalt welke updates er worden verzonden naar associatie groep 3."
+          },
+          "zwave": {
+            "index": 81,
+            "size": 1
+          },
+          "value": "1",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Nothing",
+                "nl": "Niets"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Basic Set",
+                "nl": "Basic Set"
+              }
+            }
+          ]
+        },
+        {
+          "id": "82",
+          "type": "dropdown",
+          "label": {
+            "en": "Reports to association group 4",
+            "nl": "Updates naar associatie groep 4"
+          },
+          "hint": {
+            "en": "This parameter (82) determines what reports are sent to association group 4.",
+            "nl": "Deze parameter (82) bepaalt welke updates er worden verzonden naar associatie groep 4."
+          },
+          "zwave": {
+            "index": 82,
+            "size": 1
+          },
+          "value": "1",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Nothing",
+                "nl": "Niets"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Basic Set",
+                "nl": "Basic Set"
+              }
+            }
+          ]
+        },
+        {
+          "id": "120",
+          "type": "dropdown",
+          "label": {
+            "en": "Switch type input 1",
+            "nl": "Schakelaar type input 1"
+          },
+          "hint": {
+            "en": "This parameter (120) determines what type of input is connected to input 1.",
+            "nl": "Deze parameter (120) bepaalt welk type input apparaat er is verbonden aan input 1."
+          },
+          "zwave": {
+            "index": 120,
+            "size": 1
+          },
+          "value": "0",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Automatic",
+                "nl": "Automatisch"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Momentary switch",
+                "nl": "Pulsdruk schakelaar"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "3-way switch mode",
+                "nl": "3-way schakel modus"
+              }
+            },
+            {
+              "id": "3",
+              "label": {
+                "en": "2-state switch mode",
+                "nl": "2-state schakel modus"
+              }
+            }
+          ]
+        },
+        {
+          "id": "121",
+          "type": "dropdown",
+          "label": {
+            "en": "Switch type input 2",
+            "nl": "Schakelaar type input 2"
+          },
+          "hint": {
+            "en": "This parameter (121) determines what type of input is connected to input 2.",
+            "nl": "Deze parameter (121) bepaalt welk type input apparaat er is verbonden aan input 2."
+          },
+          "zwave": {
+            "index": 121,
+            "size": 1
+          },
+          "value": "0",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Automatic",
+                "nl": "Automatisch"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Momentary switch",
+                "nl": "Pulsdruk schakelaar"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "3-way switch mode",
+                "nl": "3-way schakel modus"
+              }
+            },
+            {
+              "id": "3",
+              "label": {
+                "en": "2-state switch mode",
+                "nl": "2-state schakel modus"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "FT140-C",
+      "name": {
+        "en": "Dual In-Wall Switch"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff"
+      ],
+      "images": {
+        "large": "/drivers/FT140-C/assets/images/large.png",
+        "small": "/drivers/FT140-C/assets/images/small.png"
+      },
+      "zwave": {
+        "manufacturerId": 362,
+        "productTypeId": [
+          3,
+          515
+        ],
+        "productId": [
+          132,
+          140
+        ],
+        "zwaveAllianceProductId": 2335,
+        "zwaveAllianceProductDocumentation": "https://products.z-wavealliance.org/ProductManual/File?folder=&filename=Manuals/2335/Oomi%20Dual%20In-Wall%20Switch%20manual%20(FT140-C)%20-%202.pdf",
+        "learnmode": {
+          "instruction": {
+            "en": "Press the action button on the back of the Dual In-Wall Switch.",
+            "nl": "Druk op de actie knop op de achterkant van de Dual In-Wall Switch.",
+            "de": "Drücke die Aktionstaste auf der Rückseite vom Dual In-Wall Switch."
+          }
+        },
+        "associationGroups": [
+          1
+        ],
+        "defaultConfiguration": [
+          {
+            "id": 80,
+            "value": 2,
+            "size": 1
+          }
+        ],
+        "associationGroupsMultiChannel": [
+          3,
+          4
+        ],
+        "multiChannelNodes": {
+          "1": {
+            "name": {
+              "en": "Dual In-Wall Switch 1"
+            },
+            "icon": "/drivers/FT140-C/assets/icon.svg",
+            "class": "light",
+            "capabilities": [
+              "onoff"
+            ]
+          },
+          "2": {
+            "name": {
+              "en": "Dual In-Wall Switch 2"
+            },
+            "icon": "/drivers/FT140-C/assets/icon.svg",
+            "class": "light",
+            "capabilities": [
+              "onoff"
+            ]
+          }
+        }
+      },
+      "settings": [
+        {
+          "id": "120",
+          "type": "dropdown",
+          "label": {
+            "en": "Switch type input 1",
+            "nl": "Schakelaar type input 1"
+          },
+          "hint": {
+            "en": "This parameter (120) determines what type of input is connected to input 1.",
+            "nl": "Deze parameter (120) bepaalt welk type input apparaat er is verbonden op input 1."
+          },
+          "zwave": {
+            "index": 120,
+            "size": 1
+          },
+          "value": "0",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Automatic",
+                "nl": "Automatisch"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Momentary switch",
+                "nl": "Pulsdruk schakelaar"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "3-way switch mode",
+                "nl": "3-way schakel modus"
+              }
+            },
+            {
+              "id": "3",
+              "label": {
+                "en": "2-state switch mode",
+                "nl": "2-state schakel modus"
+              }
+            }
+          ]
+        },
+        {
+          "id": "121",
+          "type": "dropdown",
+          "label": {
+            "en": "Switch type input 2",
+            "nl": "Schakelaar type input 2"
+          },
+          "hint": {
+            "en": "This parameter (121) determines what type of input is connected to input 2.",
+            "nl": "Deze parameter (121) bepaalt welk type input apparaat er is verbonden op input 2."
+          },
+          "zwave": {
+            "index": 121,
+            "size": 1
+          },
+          "value": "0",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Automatic",
+                "nl": "Automatisch"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Momentary switch",
+                "nl": "Pulsdruk schakelaar"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "3-way switch mode",
+                "nl": "3-way schakel modus"
+              }
+            },
+            {
+              "id": "3",
+              "label": {
+                "en": "2-state switch mode",
+                "nl": "2-state schakel modus"
+              }
+            }
+          ]
+        },
+        {
+          "id": "20",
+          "type": "dropdown",
+          "label": {
+            "en": "Configure the output load status after re-power",
+            "nl": "Zet na een stroomonderbreking deze status"
+          },
+          "hint": {
+            "en": "This parameter (20) determines the behaviour after power was disconnected.",
+            "nl": "Deze parameter (20) bepaalt het gedrag nadat de stroomtoevoer is verbroken."
+          },
+          "zwave": {
+            "index": 20,
+            "size": 1
+          },
+          "value": "0",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Status before re-power",
+                "nl": "Status voor stroomonderbreking"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Always on",
+                "nl": "Altijd aan"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "Always off",
+                "nl": "Altijd uit"
+              }
+            }
+          ]
+        },
+        {
+          "id": "81",
+          "type": "dropdown",
+          "label": {
+            "en": "Reports to association group 3",
+            "nl": "Metingen naar associatie groep 3"
+          },
+          "hint": {
+            "en": "This parameter (81) determines what reports are sent to association group 3.",
+            "nl": "Deze parameter (81) bepaalt welke raporten er worden verzonden naar associatie groep 3."
+          },
+          "zwave": {
+            "index": 81,
+            "size": 1
+          },
+          "value": "1",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Nothing",
+                "nl": "Niets"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Basic Set",
+                "nl": "Basic Set"
+              }
+            }
+          ]
+        },
+        {
+          "id": "82",
+          "type": "dropdown",
+          "label": {
+            "en": "Reports to association group 4",
+            "nl": "Metingen naar associatie groep 4"
+          },
+          "hint": {
+            "en": "This parameter (82) determines what reports are sent to association group 4.",
+            "nl": "Deze parameter (82) bepaalt welke raporten er worden verzonden naar associatie groep 4."
+          },
+          "zwave": {
+            "index": 82,
+            "size": 1
+          },
+          "value": "1",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Nothing",
+                "nl": "Niets"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Basic Set",
+                "nl": "Basic Set"
               }
             }
           ]

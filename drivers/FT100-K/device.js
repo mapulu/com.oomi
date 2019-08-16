@@ -5,11 +5,14 @@ const ZwaveDevice = require('homey-meshdriver').ZwaveDevice;
 class FT100KDevice extends ZwaveDevice {
 
 	onMeshInit() {
+		this.printNode();
+		this.enableDebug();
 		this._cancellationTimeout = this.getSetting('tamper_cancellation');
 
 		this.registerCapability('measure_battery', 'BATTERY');
 
 		this.registerCapability('alarm_motion', 'SENSOR_BINARY');
+		this.registerCapability('alarm_motion', 'SENSOR_MULTILEVEL');
 		this.registerCapability('alarm_tamper', 'NOTIFICATION', {
 			reportParser: report => {
                 if ((report && report['Notification Type'] === 'Home Security' ||
@@ -36,10 +39,14 @@ class FT100KDevice extends ZwaveDevice {
 		});
 
 		this.registerCapability('measure_temperature', 'SENSOR_MULTILEVEL');
+		this.registerCapability('measure_temperature', 'SENSOR_BINARY');
 		this.registerCapability('measure_luminance', 'SENSOR_MULTILEVEL');
+		this.registerCapability('measure_luminance', 'SENSOR_BINARY');
 		this.registerCapability('measure_humidity', 'SENSOR_MULTILEVEL');
+		this.registerCapability('measure_humidity', 'SENSOR_BINARY');
 		this.registerCapability('measure_ultraviolet', 'SENSOR_MULTILEVEL');
-
+		this.registerCapability('measure_ultraviolet', 'SENSOR_BINARY');
+		
 		this.registerSetting('201', (value) => {
 			return new Buffer([Math.round(value*10), 1]);
 		});
