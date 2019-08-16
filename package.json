@@ -4,7 +4,6 @@
   "description": "This app adds support for Ooomi devices in Homey.",
   "main": "app.js",
   "dependencies": {
-    "athom-api": "^2.1.200",
     "homey-log": "^1.0.6",
     "homey-meshdriver": "^1.2.33",
     "tinycolor2": "^1.4.1"
