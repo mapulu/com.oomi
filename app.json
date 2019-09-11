@@ -4,7 +4,7 @@
     "en": "Oomi",
     "de": "Oomi"
   },
-  "version": "1.0.2",
+  "version": "1.0.3",
   "compatibility": ">=2.4.0",
   "sdk": 2,
   "brandColor": "#ff781a",
@@ -2190,6 +2190,365 @@
       ]
     },
     {
+      "id": "FT130-C",
+      "name": {
+        "en": "Mote"
+      },
+      "class": "button",
+      "capabilities": [
+        "measure_battery",
+        "alarm_battery"
+      ],
+      "images": {
+        "large": "/drivers/FT130-C/assets/images/large.png",
+        "small": "/drivers/FT130-C/assets/images/small.png"
+      },
+      "zwave": {
+        "manufacturerId": 362,
+        "productTypeId": [
+          2,
+          258,
+          513,
+          514,
+          770
+        ],
+        "productId": [
+          130
+        ],
+        "zwaveAllianceProductId": 2153,
+        "zwaveAllianceProductDocumentation": "https://Products.Z-WaveAlliance.org/ProductManual/File?folder=&filename=Manuals/2153/Aeon Labs WallMote Quad manual.pdf",
+        "learnmode": {
+          "image": "/drivers/FT130-C/assets/learnmode.svg",
+          "instruction": {
+            "en": "Secure inclusion: Double press the action button on the Mote. Non-secure inclusion: Single press the action button on the Mote.",
+            "nl": "Beveiligd toevoegen: Druk tweemaal op de actie knop op de Mote. Onbeveiligd toevoegen: Druk eenmaal op de actie knop op de Mote."
+          }
+        },
+        "unlearnmode": {
+          "instruction": {
+            "en": "Press the action button on the Mote",
+            "nl": "Druk op de actie knop op de Mote"
+          }
+        },
+        "associationGroups": [
+          1
+        ],
+        "associationGroupsOptions": {
+          "1": {
+            "hint": {
+              "en": "This is the Z-Wave Lifeline group, it is not recommended to change this.",
+              "nl": "Dit is de Z-Wave Lifeline groep, het is niet aangeraden deze te veranderen."
+            }
+          },
+          "2": {
+            "hint": {
+              "en": "Devices here will receive on and off commands from the topleft touch part.",
+              "nl": "Apparaten hier zullen de aan en uit commando's krijgen van het linksbovenste aanraak gedeelte."
+            }
+          },
+          "3": {
+            "hint": {
+              "en": "Devices here will receive dimming commands from the topleft touch part.",
+              "nl": "Apparaten hier zullen de dimmen commando's krijgen van het linksbovenste aanraak gedeelte."
+            }
+          },
+          "4": {
+            "hint": {
+              "en": "Devices here will receive on and off commands from the topright touch part.",
+              "nl": "Apparaten hier zullen de aan en uit commando's krijgen van het rechtsbovenste aanraak gedeelte."
+            }
+          },
+          "5": {
+            "hint": {
+              "en": "Devices here will receive dimming commands from the topright touch part.",
+              "nl": "Apparaten hier zullen de dimmen commando's krijgen van het rechtsbovenste aanraak gedeelte."
+            }
+          },
+          "6": {
+            "hint": {
+              "en": "Devices here will receive on and off commands from the bottomleft touch part.",
+              "nl": "Apparaten hier zullen de aan en uit commando's krijgen van het linksonderste aanraak gedeelte."
+            }
+          },
+          "7": {
+            "hint": {
+              "en": "Devices here will receive dimming commands from the bottomleft touch part.",
+              "nl": "Apparaten hier zullen de dimmen commando's krijgen van het linksonderste aanraak gedeelte."
+            }
+          },
+          "8": {
+            "hint": {
+              "en": "Devices here will receive on and off commands from the bottomright touch part.",
+              "nl": "Apparaten hier zullen de aan en uit commando's krijgen van het rechtsonderste aanraak gedeelte."
+            }
+          },
+          "9": {
+            "hint": {
+              "en": "Devices here will receive dimming commands from the bottomright touch part.",
+              "nl": "Apparaten hier zullen de dimmen commando's krijgen van het rechtsonderste aanraak gedeelte."
+            }
+          }
+        },
+        "defaultConfiguration": [
+          {
+            "id": 4,
+            "size": 1,
+            "value": 3
+          }
+        ]
+      },
+      "settings": [
+        {
+          "id": "touch_sound",
+          "type": "checkbox",
+          "label": {
+            "en": "Touch sound",
+            "nl": "Aanraak geluid"
+          },
+          "hint": {
+            "en": "This parameter (1) determines whether or not the Mote makes a sound when touched.",
+            "nl": "Deze parameter (1) bepaalt of de Mote geluid maakt bij het aanraken."
+          },
+          "zwave": {
+            "index": 1,
+            "size": 1
+          },
+          "value": true
+        },
+        {
+          "id": "touch_vibration",
+          "type": "checkbox",
+          "label": {
+            "en": "Touch vibration",
+            "nl": "Aanraak trillen"
+          },
+          "hint": {
+            "en": "This parameter (2) determines whether or not the Mote vibrates when touched.",
+            "nl": "Deze parameter (2) bepaalt of de Mote trilt bij het aanraken."
+          },
+          "zwave": {
+            "index": 2,
+            "size": 1
+          },
+          "value": true
+        },
+        {
+          "id": "slide_function",
+          "type": "checkbox",
+          "label": {
+            "en": "Slide dimming function",
+            "nl": "Swipe dim functie"
+          },
+          "hint": {
+            "en": "This parameter (3) determines whether or not dimming on slide is enabled.",
+            "nl": "Deze parameter (3) bepaalt of dimmen met swipen geactiveerd is."
+          },
+          "zwave": {
+            "index": 3,
+            "size": 1
+          },
+          "value": true
+        },
+        {
+          "id": "low_battery",
+          "type": "number",
+          "label": {
+            "en": "Low battery level",
+            "nl": "Laag batterij niveau"
+          },
+          "hint": {
+            "en": "This parameter (39) determines the percentage of battery value to at which the low battery alarm will go off.",
+            "nl": "Deze parameter (39) bepaalt hoe laag het batterijpercentage moet zijn om het alarm af te laten gaan."
+          },
+          "zwave": {
+            "index": 39,
+            "size": 1
+          },
+          "value": 20,
+          "attr": {
+            "min": 10,
+            "max": 50
+          }
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "LED color when sending data",
+            "nl": "LED kleur bij verzenden data"
+          },
+          "children": [
+            {
+              "id": "rgb_name",
+              "type": "dropdown",
+              "label": {
+                "en": "Color name",
+                "nl": "Kleur naam"
+              },
+              "hint": {
+                "en": "This parameter (39) determines the colour of the LED when sending data. * = Unfortunately the LED can't be turned off completely, this is the most faint color.",
+                "nl": "Deze parameter (39) bepaalt de kleur van de LED wanneer er data verstuurd wordt. * = Helaas kan de LED niet volledig uitgezet worden, dit is de minst felle kleur."
+              },
+              "value": "0,0,255",
+              "values": [
+                {
+                  "id": "1,1,1",
+                  "label": {
+                    "en": "Off *",
+                    "nl": "Uit *"
+                  }
+                },
+                {
+                  "id": "255,0,0",
+                  "label": {
+                    "en": "Red",
+                    "nl": "Rood"
+                  }
+                },
+                {
+                  "id": "255,127,0",
+                  "label": {
+                    "en": "Orange",
+                    "nl": "Oranje"
+                  }
+                },
+                {
+                  "id": "255,255,0",
+                  "label": {
+                    "en": "Yellow",
+                    "nl": "Geel"
+                  }
+                },
+                {
+                  "id": "0,255,0",
+                  "label": {
+                    "en": "Green",
+                    "nl": "Groen"
+                  }
+                },
+                {
+                  "id": "0,255,255",
+                  "label": {
+                    "en": "Turquise",
+                    "nl": "Turkoois"
+                  }
+                },
+                {
+                  "id": "0,127,255",
+                  "label": {
+                    "en": "Cyan",
+                    "nl": "Cyaan"
+                  }
+                },
+                {
+                  "id": "0,0,255",
+                  "label": {
+                    "en": "Blue",
+                    "nl": "Blauw"
+                  }
+                },
+                {
+                  "id": "255,0,255",
+                  "label": {
+                    "en": "Pink",
+                    "nl": "Roze"
+                  }
+                },
+                {
+                  "id": "64,0,255",
+                  "label": {
+                    "en": "Purple",
+                    "nl": "Paars"
+                  }
+                },
+                {
+                  "id": "255,255,255",
+                  "label": {
+                    "en": "White",
+                    "nl": "Wit"
+                  }
+                },
+                {
+                  "id": "custom",
+                  "label": {
+                    "en": "Custom",
+                    "nl": "Aangepast"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "rgb_name_level",
+              "type": "number",
+              "label": {
+                "en": "Brightness namecolor",
+                "nl": "Helderheid naamkleur"
+              },
+              "hint": {
+                "en": "This parameter (39) determines the brightness level of the color.",
+                "nl": "Deze parameter (39) bepaalt de helderheid niveau van de kleur."
+              },
+              "value": 100,
+              "attr": {
+                "min": 0,
+                "max": 100
+              }
+            },
+            {
+              "id": "rgb_r",
+              "type": "number",
+              "label": {
+                "en": "Red",
+                "nl": "Rood"
+              },
+              "hint": {
+                "en": "This parameter (39) determines the red channel brightness.",
+                "nl": "Deze parameter (39) bepaalt de helderheid voor het rode kleur kanaal."
+              },
+              "value": 0,
+              "attr": {
+                "min": 0,
+                "max": 255
+              }
+            },
+            {
+              "id": "rgb_g",
+              "type": "number",
+              "label": {
+                "en": "Green",
+                "nl": "Groen"
+              },
+              "hint": {
+                "en": "This parameter (39) determines the green channel brightness.",
+                "nl": "Deze parameter (39) bepaalt de helderheid voor het groene kleur kanaal."
+              },
+              "value": 0,
+              "attr": {
+                "min": 0,
+                "max": 255
+              }
+            },
+            {
+              "id": "rgb_b",
+              "type": "number",
+              "label": {
+                "en": "Blue",
+                "nl": "Blauw"
+              },
+              "hint": {
+                "en": "This parameter (39) determines the blue channel brightness.",
+                "nl": "Deze parameter (39) bepaalt de helderheid voor het blauwe kleur kanaal."
+              },
+              "value": 255,
+              "attr": {
+                "min": 0,
+                "max": 255
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "FT139-C",
       "name": {
         "en": "In-Wall Switch"
@@ -2793,6 +3152,178 @@
               }
             ],
             "value": "0"
+          }
+        ]
+      }
+    ],
+    "triggers": [
+      {
+        "id": "ft130_scene",
+        "title": {
+          "en": "Scene is activated",
+          "nl": "Scene is geactiveerd"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FT130-C"
+          },
+          {
+            "name": "button",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "1",
+                "label": {
+                  "en": "Top left",
+                  "nl": "Links boven"
+                }
+              },
+              {
+                "id": "2",
+                "label": {
+                  "en": "Top right",
+                  "nl": "Rechts boven"
+                }
+              },
+              {
+                "id": "3",
+                "label": {
+                  "en": "Bottom left",
+                  "nl": "Links onder"
+                }
+              },
+              {
+                "id": "4",
+                "label": {
+                  "en": "Bottom right",
+                  "nl": "Rechts onder"
+                }
+              }
+            ]
+          },
+          {
+            "name": "scene",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "Key Pressed 1 time",
+                "label": {
+                  "en": "Pressed 1x",
+                  "nl": "1x gedrukt"
+                }
+              },
+              {
+                "id": "Key Held Down",
+                "label": {
+                  "en": "Hold press (5x a second)",
+                  "nl": "Lang drukken (5x per seconde)"
+                }
+              },
+              {
+                "id": "Key Released",
+                "label": {
+                  "en": "Press released",
+                  "nl": "Drukken losgelaten"
+                }
+              },
+              {
+                "id": "Key Slide Up",
+                "label": {
+                  "en": "Slide Up",
+                  "nl": "Omhoog Schuiven"
+                }
+              },
+              {
+                "id": "Key Slide Down",
+                "label": {
+                  "en": "Slide Down",
+                  "nl": "Omlaag schuiven"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ft130_dim",
+        "title": {
+          "en": "Dim level has been sent",
+          "nl": "Het helderheidsniveau is verzonden"
+        },
+        "hint": {
+          "en": "The dim level is send when you slide your finger over the wallmote. The brightness level will be the height you stopped at (full height of the Mote).",
+          "nl": "Het helderheidsniveau wordt verzonden bij het schuiven van de vinger over de wallmote. Het helderheidsniveau is de hoogte waar je stopt (volle hoogte van de Mote)."
+        },
+        "tokens": [
+          {
+            "name": "dim",
+            "type": "number",
+            "title": {
+              "en": "level",
+              "nl": "niveau"
+            },
+            "example": 0.5
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FT130-C"
+          },
+          {
+            "name": "button",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "1",
+                "label": {
+                  "en": "Top left",
+                  "nl": "Links boven"
+                }
+              },
+              {
+                "id": "2",
+                "label": {
+                  "en": "Top right",
+                  "nl": "Rechts boven"
+                }
+              },
+              {
+                "id": "3",
+                "label": {
+                  "en": "Bottom left",
+                  "nl": "Links onder"
+                }
+              },
+              {
+                "id": "4",
+                "label": {
+                  "en": "Bottom right",
+                  "nl": "Rechts onder"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ft130_battery_full",
+        "title": {
+          "en": "Battery fully charged",
+          "nl": "Batterij volledig opgeladen"
+        },
+        "hint": {
+          "en": "This card will only trigger if the Mote has been included as secure.",
+          "nl": "Deze kaart zal alleen activeren als de Mote beveiligd is toevoegd."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FT130-C"
           }
         ]
       }
