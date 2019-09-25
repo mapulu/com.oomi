@@ -11,8 +11,25 @@ class FT100KDevice extends ZwaveDevice {
 
 		this.registerCapability('measure_battery', 'BATTERY');
 
-		this.registerCapability('alarm_motion', 'SENSOR_BINARY');
-		this.registerCapability('alarm_motion', 'SENSOR_MULTILEVEL');
+		this.registerCapability('alarm_motion', 'NOTIFICATION', {
+			reportParser: report => {
+				if (report && report['Notification Type'] === 'Burglar' &&
+					report.hasOwnProperty('Event (Parsed)') &&
+					report['Event (Parsed)'] === 'Motion Detection, Unknown Location'
+				) {
+					return true;
+				}
+				if (report &&
+					report['Event (Parsed)'] === 'Event inactive' &&
+					report.hasOwnProperty('Event Parameter') &&
+					report['Notification Type'] === 'Burglar'
+				) {
+					return false;
+				}
+				return null;
+			}
+		});
+		
 		this.registerCapability('alarm_tamper', 'NOTIFICATION', {
 			reportParser: report => {
                 if ((report && report['Notification Type'] === 'Home Security' ||
