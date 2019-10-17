@@ -16,6 +16,12 @@
     "measure_humidity",
     "measure_ultraviolet"
   ],
+  "energy": {
+    "batteries": [
+      "CR123A",
+      "CR123A"
+  ]
+  },
   "images": {
     "large": "{{driverAssetsPath}}/images/large.png",
     "small": "{{driverAssetsPath}}/images/small.png"

@@ -4,8 +4,8 @@
     "en": "Oomi",
     "de": "Oomi"
   },
-  "version": "1.0.3",
-  "compatibility": ">=2.4.0",
+  "version": "1.0.4",
+  "compatibility": ">=3.0.0",
   "sdk": 2,
   "brandColor": "#ff781a",
   "category": [
@@ -903,6 +903,12 @@
         "measure_humidity",
         "measure_ultraviolet"
       ],
+      "energy": {
+        "batteries": [
+          "CR123A",
+          "CR123A"
+        ]
+      },
       "images": {
         "large": "/drivers/FT100-K/assets/images/large.png",
         "small": "/drivers/FT100-K/assets/images/small.png"
@@ -1699,6 +1705,11 @@
         "measure_battery",
         "alarm_contact"
       ],
+      "energy": {
+        "batteries": [
+          "INTERNAL"
+        ]
+      },
       "images": {
         "large": "/drivers/FT112-K/assets/images/large.png",
         "small": "/drivers/FT112-K/assets/images/small.png"
@@ -2199,6 +2210,11 @@
         "measure_battery",
         "alarm_battery"
       ],
+      "energy": {
+        "batteries": [
+          "INTERNAL"
+        ]
+      },
       "images": {
         "large": "/drivers/FT130-C/assets/images/large.png",
         "small": "/drivers/FT130-C/assets/images/small.png"

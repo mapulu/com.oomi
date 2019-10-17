@@ -26,7 +26,7 @@
       "instruction": {
         "en": "Press the action button on the back of the {{driverNameEn}}.",
         "nl": "Druk op de actie knop op de achterkant van de {{driverNameNl}}.",
-	 "de": "Drücke die Aktionstaste auf der Rückseite vom {{driverNameEn}}."
+	    "de": "Drücke die Aktionstaste auf der Rückseite vom {{driverNameEn}}."
       }
     },
     "associationGroups": [

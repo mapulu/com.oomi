@@ -10,6 +10,10 @@ You can write me a message at Athom Community [@mapulu](https://community.athom.
 
 
 ### Changelog:
+**1.0.4**
+Added Homey Energy
+Meshdriver Update
+
 **1.0.3**
 New device (Mote)
 
